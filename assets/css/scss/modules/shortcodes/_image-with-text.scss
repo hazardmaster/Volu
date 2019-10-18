@@ -1,0 +1,81 @@
+.edgtf-image-with-text {
+
+	img {
+		vertical-align: middle;
+	}
+
+	.edgtf-image-with-text-info {
+		padding-top: 20px;
+		text-align: center;
+	}
+	
+	.edgtf-image-with-text-text{
+		font-family: $first-main-font;
+		font-size: 17px;
+		color: $default-text-color;
+		font-style: italic;
+		@include edgtfTransition(all 0.3s ease-in-out);
+	}
+	
+	.edgtf-image-with-text-image-inner {
+    	@include edgtfBoxShadow(0 1px 4px rgba(0, 0, 0, 0.08));
+    	@include edgtfTransition(all 0.3s ease-in-out);
+		position: relative;
+		.edgtf-image-with-text-image-overlay {
+			opacity: 0;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include edgtfTransition(all 0.3s ease-in-out);
+			.edgtf-image-with-text-image-overlay-inner {
+			    top: 50%;
+			    position: absolute;
+			    left: 50%;
+			    transform: translate(-50%,-50%);
+			    z-index: 10;
+			}
+		}
+		&:hover { 
+
+			@include edgtfTransform(translate3d(0,-10px,0));
+			@include edgtfBoxShadow(0 3px 7px rgba(0, 0, 0, 0.15));
+
+			.edgtf-image-with-text-image-overlay {
+				opacity: 1;
+				@include edgtfTransition(opacity 0.3s ease-in-out);
+			}
+
+			.edgtf-image-with-text-text {
+				color:rgb(48, 39, 28);
+			}
+		}
+		.edgtf-image-with-text-link{
+			position: absolute;
+			left: 0;
+			top: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+
+		}
+	}
+
+	&:hover {  
+
+		.edgtf-image-with-text-image-inner {
+			@include edgtfTransform(translate3d(0,-10px,0));
+			@include edgtfBoxShadow(0 7px 16px 0 rgba(0,0,0,.15));
+
+			.edgtf-image-with-text-image-overlay {
+				opacity: 1;
+				@include edgtfTransition(opacity 0.3s ease-in-out);
+			}
+
+			.edgtf-image-with-text .edgtf-image-with-text-text {
+				color:rgb(48, 39, 28);
+			}
+		}
+	}
+}

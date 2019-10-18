@@ -1,0 +1,46 @@
+.edgtf-give-forms-list.edgtf-gfl-standard {
+
+	&.edgtf-columns-2{
+		@include phone-landscape{
+			.edgtf-give-form-item{
+				width: 100%;
+			}
+		}
+	}
+
+	&.edgtf-columns-3{
+		@include ipad-portrait{
+			.edgtf-give-form-item{
+				width: 100%;
+			}
+		}
+	}
+
+	&.edgtf-columns-4,
+	&.edgtf-columns-5{
+		@include ipad-landscape{
+			.edgtf-give-form-item{
+				width: 50%;
+			}
+		}
+
+		@include phone-landscape{
+			.edgtf-give-form-item{
+				width: 100%;
+			}
+		}
+	}
+}
+
+.edgtf-give-forms-list.edgtf-gfl-minimal {
+	@include ipad-landscape {
+		.edgtf-give-image-holder {
+			display: block;
+			width: auto!important;
+		}
+		.edgtf-gf-minimal-holder {
+			display: block;
+			padding: 0 0 5px;
+		}
+	}
+}

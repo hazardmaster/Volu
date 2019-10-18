@@ -1,0 +1,156 @@
+.edgtf-give-forms-slider-outer{
+	position: relative;
+
+	.edgtf-give-forms-slider-text-holder{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 50%;
+		height: 100%;
+		z-index: 5;
+
+		.edgtf-gfs-text-table{
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+
+		.edgtf-gfs-text-table-cell{
+			display: table-cell;
+			vertical-align: middle;
+			padding-left: 14%;
+		}
+
+		.edgtf-gf-slider-title{
+			color: #fff;
+		}
+
+		.edgtf-gf-slider-subtitle{
+			color: #fff;
+			font-size: 20px;
+			line-height: 33px;
+			margin-top: 20px;
+			display: block;
+		}
+	}
+
+	.edgtf-give-forms-slider {
+		visibility:hidden;
+
+		&.edgtf-give-forms-slider-loaded {
+			visibility:visible;
+		}
+	}
+
+	.edgtf-gfs-item{
+		position: relative;
+
+		.edgtf-gfs-image-holder{
+			opacity: 0;
+			@include edgtfTransform(scale(1.1));
+			@include edgtfTransformOrigin(50% 100%);
+			-webkit-transition: -webkit-transform .7s,opacity .25s ease-in-out!important;
+			transition: transform .7s,opacity .25s ease-in-out!important;
+
+			img{
+				width: 100%;
+				vertical-align: middle;
+			}
+		}
+
+		.edgtf-gfs-content-holder{
+			position: absolute;
+			top: 0;
+			right: 0;
+			height: 100%;
+			width: 32%;
+			background-color: transparentize($first-main-color, 0.1);
+			@include edgtfTransform(translateX(100%));
+			-webkit-transition: -webkit-transform .25s ease-in-out;
+			transition: transform .25s ease-in-out;
+			z-index: 15;
+		}
+
+		.edgtf-gfs-content-table{
+			display: table;
+			width: 100%;
+			height: 100%;
+		}
+
+		.edgtf-gfs-content-table-cell{
+			display: table-cell;
+			vertical-align: middle;
+			padding: 0 35px;
+		}
+
+		.edgtf-gfs-title{
+			color: #fff;
+			margin-bottom: 30px;
+
+			a:hover{
+				color: #f6f4ee;
+			}
+		}
+
+		.edgtf-gfs-content,
+		.give-goal-progress .raised,
+		.give-goal-progress .income,
+		.edgtf-give-progress .edgtf-give-progress-raised .edgtf-give-progress-title,
+		.edgtf-give-progress .edgtf-give-progress-goal .edgtf-give-progress-title,
+		.edgtf-give-progress .edgtf-give-progress-raised .edgtf-give-progress-amount,
+		.edgtf-give-progress .edgtf-give-progress-goal .edgtf-give-progress-amount{
+			color: #fff;
+		}
+
+		.edgtf-gfs-content p {
+			margin-bottom: 17px;
+		}
+
+		.edgtf-give-progress {
+			margin-bottom: 45px;
+		}
+
+		.give-progress-bar{
+			background-color: rgba(255,255,255,0.4);
+
+			span{
+				background-color: #fff !important; //because of the inline style
+			}
+		}
+
+		&.slick-active{
+
+			.edgtf-gfs-image-holder{
+				opacity: 1;
+				@include edgtfTransform(scale(1));
+			}
+
+			.edgtf-gfs-content-holder{
+				@include edgtfTransform(translateX(0));
+				-webkit-transition: -webkit-transform .25s ease-out .5s;
+				transition: transform .25s ease-out .5s;
+			}
+		}
+	}
+
+	&.edgtf-slick-slider-navigation-style{
+
+		.slick-list{
+			padding: 0;
+		}
+
+		.edgtf-slick-dots{
+			top: auto;
+			bottom: 22px;
+			z-index: 20;
+
+			li {
+				@include edgtfTransform(all .15s cubic-bezier(.4,.87,.4,.87));
+			}
+
+			.slick-active {
+				@include edgtfTransform(scale(1.2));
+			}
+		}
+	}
+}

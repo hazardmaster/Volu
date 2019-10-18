@@ -1,0 +1,48 @@
+@include ipad-landscape{
+	.edgtf-event-single-holder{
+
+		.edgtf-two-columns-75-25 .edgtf-column1,
+		.edgtf-two-columns-75-25 .edgtf-column2{
+			width: 100%;
+
+			.edgtf-column-inner{
+				padding: 0;
+			}
+		}
+
+		.edgtf-event-top-holder .edgtf-event-top-right{
+			display: none;
+		}
+
+		.edgtf-event-info-holder{
+			margin-top: 25px;
+
+			.edgtf-event-info-title{
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $ipad-landscape) and (min-width: $phone-portrait) {
+
+	.edgtf-event-single-holder{
+
+		.edgtf-event-info-item .edgtf-event-info-item-title,
+		.edgtf-event-social .edgtf-social-share-holder .edgtf-social-share-title{
+			width: 25%;
+		}
+	}
+}
+
+@include phone-landscape {
+	.edgtf-event-single-holder .edgtf-event-images-gallery {
+		margin: -10px -10px 35px -10px;
+
+		&.edgtf-event-gallery-col-3 .edgtf-event-single-image {
+			width: 50%;
+			padding: 10px 10px 0 10px;
+		}
+	}
+}

@@ -1,0 +1,41 @@
+/* ==========================================================================
+# Animation Holder styles - begin
+========================================================================== */
+
+.edgtf-animations-holder {
+	> div {
+		opacity:0;
+	}
+
+	&.edgtf-fade-in-up {
+		> div {
+			@include edgtfTransform(translate3d(0,100px,0));
+			@include edgtfTransition(all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86));
+
+			&.edgtf-appeared {
+				> div {
+					opacity:1;
+					@include edgtfTransform(translate3d(0,0,0));
+				}
+			}
+		}
+	}
+
+	&.edgtf-fade-in-scale {
+		> div {
+			@include edgtfTransform(scale(.85));
+			@include edgtfTransition(all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86));
+		}
+
+		&.edgtf-appeared {
+			> div {
+				opacity:1;
+				@include edgtfTransform(scale(1));
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+# Animation Holder styles - end
+========================================================================== */

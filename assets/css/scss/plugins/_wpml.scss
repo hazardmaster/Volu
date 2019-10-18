@@ -1,0 +1,391 @@
+/* ==========================================================================
+   WPML style start
+   ========================================================================== */
+.widget_icl_lang_sel_widget {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+%wpml-dropdown-styles {
+	position: relative;
+	@include edgtfBoxSizing(border-box);
+
+	.lang_sel_sel {
+		position: relative;
+		display: block;
+
+		&:after {
+			content: '\33';
+			font-family: 'ElegantIcons', serif;
+			color: inherit;
+			position: absolute;
+			right: 10px;
+			top: 50%;
+			display: block;
+
+			@include edgtfTransform(translateY(-50%));
+		}
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			border-bottom: 0;
+		}
+	}
+
+	ul ul {
+		position: absolute;
+		top: 100%;
+		width: calc(100% + 2px);
+		left: -1px;
+		z-index: 10;
+		opacity: 0;
+		visibility: hidden;
+
+		border-top: none;
+		padding: 10px 18px;
+
+		@include edgtfBoxSizing(border-box);
+		@include edgtfTransition(visibility 0s linear 0.25s, opacity 0.25s ease-in-out);
+
+		a {
+			display: block;
+		}
+	}
+
+	&:hover {
+		ul ul {
+			opacity: 1;
+			visibility: visible;
+
+			-webkit-transition-delay: 0s;
+			-moz-transition-delay: 0s;
+			transition-delay: 0s;
+		}
+	}
+}
+
+.edgtf-sidebar,
+.wpb_widgetised_column {
+
+	.widget_icl_lang_sel_widget {
+		width: 100%;
+
+		img {
+			display: inline-block !important;
+			vertical-align: middle;
+		}
+	}
+
+	//dropdown styles
+	#lang_sel {
+		@extend %wpml-dropdown-styles;
+
+		border: 1px solid #bcc0c4;
+
+		.lang_sel_sel {
+			padding: 8px 18px;
+			font-weight: 500;
+		}
+
+		ul ul {
+			background-color: #fff;
+			border: 1px solid #bcc0c4;
+			border-top: none;
+
+			a {
+				font-weight: 500;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			img {
+				margin: 0 5px 0 0;
+			}
+		}
+	}
+
+	//list styles
+	#lang_sel_list {
+
+		ul li {
+			padding: 5px 0;
+		}
+	}
+
+	.lang_sel_list_horizontal {
+
+		ul li {
+		    display: inline-block;
+		    vertical-align: middle;
+		    margin: 0 15px 5px 0;
+
+		    &:last-child {
+		    	margin: 0 0 5px;
+		    }
+		}
+	}
+}
+
+.edgtf-footer-inner,
+.edgtf-side-menu {
+
+	.widget_icl_lang_sel_widget {
+		width: 100%;
+	}
+
+	//dropdown styles
+	#lang_sel {
+		@extend %wpml-dropdown-styles;
+
+		border: 1px solid #444;
+
+		.lang_sel_sel {
+			padding: 7px 25px 7px 15px;
+		}
+
+		ul {
+			background-color: #232323;
+		}
+
+		a {
+			color: #8d8d8d;
+			margin-bottom: 0;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+
+		ul ul {
+			border: 1px solid #444;
+			border-top: none;
+			padding: 10px 15px;
+
+			img {
+				margin: 0 5px 0 0;
+			}
+		}
+	}
+
+	//list tyles
+	#lang_sel_list {
+
+		img {
+			margin-right: 5px;
+		}
+	}
+
+	.lang_sel_list_horizontal {
+
+		ul li {
+			display: inline-block;
+		    vertical-align: middle;
+		    margin: 0 15px 5px 0;
+
+		    &:last-child {
+		    	margin: 0 0 5px;
+		    }
+		}
+	}
+
+	.edgtf-footer-bottom-holder {
+
+		#lang_sel_list {
+			line-height: 1.4em;
+		}
+	}
+}
+
+.edgtf-top-bar {
+
+	.edgtf-position-right-inner .widget_icl_lang_sel_widget {
+	    margin-left: 20px;
+	}
+
+	#lang_sel {
+		@extend %wpml-dropdown-styles;
+
+		.lang_sel_sel {
+			font-size: 12px;
+			color: #212121;
+			font-weight: 400;
+			padding: 0 20px 0 0;
+
+			&:after {
+				right: 0;
+			}
+
+			img {
+				position: relative;
+				top: 2px;
+			}
+		}
+
+		ul {
+			list-style-type: none;
+		}
+
+		ul ul {
+			width: 140px;
+			padding: 5px 0 10px;
+			top: calc(100% - 2px);
+			left: -15px;
+			text-align: left;
+			line-height: 1.7em;
+			background-color: #232323;
+
+			img {
+				position: relative;
+				top: 2px;
+				margin-right: 5px;
+			}
+
+			a {
+				color: #d6d6d6!important;
+				font-size: 12px;
+				font-weight: 400;
+				display: block;
+				padding: 6px 15px 6px;
+
+				&:hover {
+					color: #fff!important;
+				}
+			}
+		}
+	}
+
+	#lang_sel_list {
+
+		ul {
+			list-style-type: none;
+
+			li {
+				float: left;
+				margin-right: 10px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+
+				a {
+					color: #ccc;
+
+					&:hover {
+						color: #fff;
+					}
+				}
+			}
+		}
+
+		img {
+			margin-right: 5px;
+		}
+	}
+}
+
+.edgtf-main-menu > ul > li.menu-item-language > a {
+	padding: 0 30px 0 15px;
+
+	span {
+		position: relative;
+	    display: block;
+	    top: 50%;
+	    @include edgtfTransform(translateY(-50%));
+
+	    :after {
+			content: '\33';
+			font-family: 'ElegantIcons';
+
+			position: absolute;
+			right: -15px;
+			top: 50%;
+			display: block;
+			
+			@include edgtfTransform(translateY(-50%));
+		}
+	}
+
+	img {
+		display: inline-block !important;
+		vertical-align: middle;
+		margin: 0 5px 0 0;
+	}
+}
+
+.edgtf-main-menu {
+
+	.menu-item-language {
+
+		.submenu-languages {
+			position: absolute;
+			top: 100%;
+			width: 200px;
+			left: -1px;
+			z-index: 10;
+			opacity: 0;
+			visibility: hidden;
+
+			border-top: none;
+			padding: 5px 0 10px;
+
+		    text-align: left;
+		    background-color: #232323;
+
+			@include edgtfBoxSizing(border-box);
+			@include edgtfTransition(visibility 0s linear 0.25s, opacity 0.25s ease-in-out);
+
+			li {
+			    display: block;
+			    width: 100%;
+			    float: none;
+			    padding: 0 15px;
+			    @include edgtfBoxSizing(border-box);
+			}
+
+			a {
+				display: block;
+				color: #8d8d8d;
+			    font-size: 13px;
+			    line-height: 23px;
+			    font-weight: 500;
+		        text-transform: inherit;
+		        padding: 9px 0;
+
+				&:hover {
+					color: #fff;
+				}
+
+				img {
+					position: relative;
+					display: inline-block;
+					vertical-align: middle;
+					top: -1px;
+					margin: 0 5px 0 0;
+				}
+			}
+		}
+
+		&:hover {
+
+			ul {
+				opacity: 1;
+				visibility: visible;
+
+				-webkit-transition-delay: 0s;
+				-moz-transition-delay: 0s;
+				transition-delay: 0s;
+			}
+		}	
+	}
+}
+/* ==========================================================================
+   WPML style start
+   ========================================================================== */

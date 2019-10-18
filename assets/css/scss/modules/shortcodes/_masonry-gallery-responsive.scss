@@ -1,0 +1,56 @@
+/* ==========================================================================
+# Masonry Gallery Responsive - start
+========================================================================== */
+@include ipad-landscape {
+	.edgtf-masonry-gallery-holder {
+		.edgtf-masonry-gallery-grid-sizer,
+		.edgtf-masonry-gallery-item {
+			width: 50%;
+		}
+		.edgtf-masonry-gallery-item {
+			&.edgtf-mg-square-big,
+			&.edgtf-mg-rectangle-landscape {
+				width: 100%;
+			}
+		}
+	}
+
+}
+
+@include phone-landscape {
+
+	.edgtf-masonry-gallery-holder {
+		.edgtf-masonry-gallery-grid-sizer,
+		.edgtf-masonry-gallery-item {
+			width: 100%;
+		}
+
+		.edgtf-masonry-gallery-item.edgtf-mg-square-big{
+			.edgtf-masonry-gallery-item-title{
+				font-size: 30px;
+			}
+
+			.edgtf-masonry-gallery-item-text{
+				display: none;
+			}
+		}
+
+		.edgtf-masonry-gallery-item.edgtf-mg-rectangle-landscape{
+			.edgtf-masonry-gallery-item-content{
+				padding: 5px 28px 20px;
+			}
+
+			.edgtf-masonry-gallery-item-inner .edgtf-masonry-gallery-read-more{
+				bottom: 12px;
+			}
+		}
+
+		.edgtf-masonry-gallery-item.edgtf-mg-rectangle-landscape.edgtf-mg-text-info .edgtf-masonry-gallery-item-text {
+		    display: none;
+		}
+	}
+}
+
+/* ==========================================================================
+# Masonry Gallery Responsive - end
+========================================================================== */

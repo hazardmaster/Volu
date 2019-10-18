@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Banner shortcode start responsive styles
+   ========================================================================== */
+    @include laptop-wide-landscape {
+        .edgtf-banner {
+            .edgtf-banner-title span {
+                font-size: 0.85em;
+                line-height: 1.2em;
+            }
+        }
+
+        .edgtf-banner .edgtf-banner-text-holder .edgtf-banner-text-table {
+            width: 74%;
+            padding: 40px 20px 34px 32px;
+
+            .edgtf-banner-text-cell .edgtf-banner-read-more {
+                margin: 31px 0 16px;
+            }
+        }
+    }
+
+    @include laptop-mid-landscape {
+        .edgtf-banner {
+            .edgtf-banner-title span {
+                font-size: 0.8em;
+                line-height: 1.2em;
+            }
+        }
+        .edgtf-banner .edgtf-banner-text-holder .edgtf-banner-text-table {
+            width: 88%;
+            padding: 28px 20px 34px 32px;
+
+            .edgtf-banner-text-cell .edgtf-banner-read-more {
+                margin: 26px 0 17px;
+            }
+
+            .edgtf-banner-text-cell .edgtf-banner-subtitle {
+                margin-bottom: 6px;
+            }
+        }
+    }
+
+@include ipad-landscape {
+    .edgtf-banner {
+        .edgtf-banner-title span {
+            font-size: 0.8em;
+            line-height: 1.2em;
+        }
+    }
+}
+
+
+   @include ipad-landscape {
+	   .edgtf-banner .edgtf-banner-text-holder .edgtf-banner-text-table {
+   			width: 84%;
+   			padding: 20px;
+	   }
+
+      .edgtf-banner .edgtf-banner-text-holder .edgtf-banner-text-table .edgtf-banner-text-cell .edgtf-banner-read-more {
+         bottom: 32px;
+         margin: 17px 0 10px;
+      }
+   }
+
+   @include ipad-portrait {
+	   .edgtf-banner .edgtf-banner-text-holder .edgtf-banner-text-table {
+   			padding: 50px;
+	   }
+
+       .edgtf-banner .edgtf-banner-text-holder .edgtf-banner-text-table .edgtf-banner-text-cell .edgtf-banner-read-more {
+           bottom: 32px;
+           margin: 55px 0px 22px;
+       }
+
+       .edgtf-banner {
+           .edgtf-banner-title span {
+               font-size: 1em;
+               line-height: 1.2em;
+           }
+       }
+   }
+
+   @include phone-landscape {
+
+       .edgtf-banner .edgtf-banner-text-holder .edgtf-banner-text-table {
+           padding: 30px 25px;
+
+           .edgtf-banner-text-cell .edgtf-banner-subtitle {
+               margin-bottom: 4px;
+           }
+           .edgtf-banner-text-cell .edgtf-banner-read-more {
+               bottom: 32px;
+               margin: 17px 0 10px;
+           }
+       }
+
+       .edgtf-banner {
+           .edgtf-banner-title span {
+               font-size: 0.8em;
+               line-height: 1.2em;
+           }
+       }
+   }
+   
+
+/* ==========================================================================
+   Banner shortcode end responsive styles
+   ========================================================================== */

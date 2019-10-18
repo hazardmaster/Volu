@@ -1,0 +1,53 @@
+$grid-width: 1300px;
+$grid-width-laptop-wide-landscape: 1100px;
+$grid-width-laptop-landscape: 950px;
+$grid-width-ipad-landscape: 768px;
+$grid-width-ipad-portrait: 600px;
+$grid-width-phone-landscape: 420px;
+$grid-width-phone-portrait: 300px;
+$grid-width-smaller-phone-portrait: 95%;
+
+$grid-width-boxed: 1390px;
+$grid-width-laptop-wide-landscape-boxed: 1290px;
+$grid-width-laptop-mid-landscape-boxed: 1180px;
+$grid-width-laptop-landscape-boxed: 1020px;
+$grid-width-ipad-landscape-boxed: 860px;
+$grid-width-ipad-portrait-boxed: 650px;
+$grid-width-phone-landscape-boxed: 100%;
+
+$grid-width-1300: 1300px;
+$grid-width-1200: 1200px;
+$grid-width-1000: 1000px;
+$grid-width-800: 800px;
+
+$first-main-color: #ffb422;
+$second-main-color: #9fcf5d;
+$elements-dark-background-color: #212121;
+$default-background-color: #fff;
+$default-elements-background-color: #f6f4ee;
+$default-elements-color: #f1efe9;
+$default-text-color: #888;
+$default-heading-color: #212121;
+$default-border-color: #f1f1f1;
+$default-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.06);
+$header-light-color: #ffffff;
+$header-dark-color: #000000;
+$first-main-font: 'Open Sans', sans-serif;
+$default-heading-font: Merriweather, serif;
+
+//responsive breakpoints
+$laptop-wide-landscape: 1440px;
+$laptop-mid-landscape: 1280px;
+$laptop-landscape: 1200px;
+$ipad-landscape: 1024px;
+$ipad-portrait: 768px;
+$phone-landscape: 600px;
+$phone-portrait: 480px;
+$smaller-phone-portrait: 320px;
+
+$vertical-menu-width: 300px;
+
+// responsive breakpoints vertical menu
+$vertical-menu-laptop-wide-landscape: 1650px;
+$vertical-menu-laptop-landscape: 1490px;
+$vertical-menu-ipad-landscape: 1314px

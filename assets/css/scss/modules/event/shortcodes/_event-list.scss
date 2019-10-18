@@ -1,0 +1,16 @@
+@import 'event-list-standard';
+@import 'event-list-full-width';
+@import 'event-list-carousel';
+@import 'event-list-calendar';
+@import 'event-info';
+
+.edgtf-el-list-paging{
+	text-align: center;
+
+	.edgtf-el-list-load-more .edgtf-btn{
+		margin: 50px 0;
+		font-size: 24px;
+		font-weight: 700;
+		font-family: $default-heading-font;
+	}
+}

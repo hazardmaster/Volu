@@ -1,0 +1,55 @@
+.edgtf-give-forms-slider-outer{
+
+	@include ipad-landscape{
+		.edgtf-gfs-item{
+			.edgtf-gfs-content-holder{
+				width: 50%;
+			}
+		}
+		.edgtf-give-forms-slider-text-holder{
+			.edgtf-gfs-text-table-cell{
+				padding-left: 7%;
+			}
+		}
+	}
+
+	@include ipad-portrait{
+		.edgtf-give-forms-slider-text-holder{
+			display: none;
+		}
+
+		.edgtf-gfs-item{
+			.edgtf-gfs-content-holder{
+				width: 100%;
+			}
+		}
+		 .edgtf-gfs-item  {
+
+			 .edgtf-gfs-content-table-cell {
+				 padding: 10px 35px;
+			 }
+			.edgtf-gfs-title {
+				margin-bottom: 15px;
+			}
+			.edgtf-give-progress {
+				margin-bottom: 25px;
+			}
+		}
+	}
+
+	@include phone-portrait {
+
+		.edgtf-gfs-item {
+			.edgtf-gfs-content {
+				display: none;
+			}
+			.edgtf-gfs-title {
+				margin-bottom: 10px;
+			}
+		}
+
+		&.edgtf-slick-slider-navigation-style .edgtf-slick-dots {
+			bottom: 0;
+		}
+	}
+}

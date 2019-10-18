@@ -1,0 +1,11 @@
+.edgtf-header-vertical {
+    .edgtf-vertical-area-widget-holder{
+        z-index: 100;
+        position: absolute;
+	    bottom: 20px;
+		padding:0 45px;
+		text-align:center;
+        width: 100%;
+        @include edgtfBoxSizing(border-box);
+    }
+}

@@ -1,0 +1,353 @@
+/* =========================================================================
+	#Widgets style = start
+============================================================================*/
+
+.edgtf-sidebar-title-separator {
+	.edgtf-separator{
+		margin: 7px 0 30px;
+	}
+}
+
+.edgtf-sidebar {
+
+	padding-bottom: 20px;
+	position:relative;
+	top:0;
+
+	.edgtf-widget-title {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.edgtf-separator-holder {
+
+		&.edgtf-sidebar-title-separator {
+			display: block;
+			&:before {
+				background-color: orange;
+				content: '';
+				width: 55px;
+				height: 3px;
+				display: block;
+				position: absolute;
+				top: 7px;
+				left:0;
+				z-index: 3;
+			}
+		}
+		.edgtf-separator {
+			width: 100%;
+			border-bottom-width: 3px;
+			border-bottom-color: $default-elements-background-color
+		}
+	}
+
+	select {
+		width: 100%;
+		border: 1px solid $default-border-color;
+		padding: 10px 15px;
+	}
+
+	.widget{
+		margin-bottom: 45px;
+
+		&:last-child{
+			margin-bottom:0;
+		}
+
+		/* Global widgets style */
+		ul:not(.product_list_widget) {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li:not(.edgtf-blog-list-item){
+
+				font-family: $default-heading-font;
+				font-weight: 700;
+				padding-bottom: 5px;
+				padding-top: 5px;
+				padding-left: 22px;
+				position: relative;
+				@include edgtfTransition(color .2s ease-out);
+				color: $default-heading-color;
+
+				a {
+					color: inherit;
+				}
+
+				&:first-child {
+					padding-top: 0;
+				}
+
+				&:last-child {
+					padding-bottom: 0;
+				}
+
+				&:before {
+					font-family: 'ElegantIcons', serif;
+					content: "\45";
+					font-size: 12px;
+					position: absolute;
+					left: 0;
+					color: $first-main-color;
+					font-style: normal;
+
+				}
+			
+				> a:hover {
+					color: $first-main-color;
+				}
+
+				ul:not(.sub-menu) {
+					padding: 0 0 0 15px;
+				}
+			}
+		}
+
+		ul.product_list_widget {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		a {
+			color: $default-heading-color;
+		}
+
+		input[type=submit],
+		input[type=text] {
+			-webkit-appearance: none;
+			background: transparent;
+			border: none;
+			outline: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		// search widget input field text
+		&.widget_search{
+			.edgtf-separator {
+				margin: 7px 0 29px;
+			}
+		}
+
+		.edgtf-search-wrapper {
+			position: relative;
+			line-height: normal;
+
+			input[type='text'] {
+				width: calc(100% - 57px);
+				outline: none;
+				border: 1px solid #e1e1e1;
+				line-height: 42px;
+				height: 42px;
+				box-sizing: border-box;
+				padding: 0 37px 0 15px;
+				font-family: $default-heading-font;
+				font-size: 14px;
+				font-weight: 400;
+				color: $default-text-color;
+				background-color: #f6f4ee;
+			}
+
+			::-webkit-input-placeholder {
+				color: #c4c4c4;
+			}
+			:-moz-placeholder {
+				color: #c4c4c4;
+			}
+			::-moz-placeholder {
+				color: #c4c4c4;
+			}
+			:-ms-input-placeholder {
+				color: #c4c4c4;
+			}
+
+			input[type='submit'] {
+				position: absolute;
+				right: 0;
+				top: 0;
+				width: 41px;
+				height: 41px;
+				line-height: 41px;
+				text-align: center;
+				cursor: pointer;
+				font-size: 15px;
+				color: #fff;
+				font-family: 'ElegantIcons', serif !important;
+				speak: none;
+				font-style: normal;
+				font-weight: normal;
+				font-variant: normal;
+				text-transform: none;
+				-webkit-font-smoothing: antialiased;
+				border:none;
+				background: $first-main-color;
+				padding:0;
+				letter-spacing: normal;
+				@include edgtfTransition(color 0.15s ease-out, background-color 0.15s ease-out, border-color 0.15s ease-out);
+
+				&:hover{
+					color: #fff;
+					background-color: $elements-dark-background-color;
+					border-color: $elements-dark-background-color;
+				}
+			}
+		}
+
+		&.widget_tag_cloud {
+
+            margin-bottom: 38px;
+
+			.edgtf-separator {
+				margin: 7px 0 19px;
+			}
+
+			.tagcloud a {
+
+				font-family: $default-heading-font;
+				color: $default-text-color;
+				font-size: 14px!important;
+				display: inline-block;
+				margin-right: 2px;
+				padding: 0 6px;
+				text-transform: capitalize;
+				line-height: 28px;
+				border: 1px solid transparent;
+				@include edgtfTransition(all 0.15s ease-out);
+				background-color: #fff;
+				&:hover {
+					color: $first-main-color;
+				}
+			}
+		}
+
+
+		&.widget_archive li {
+			&:hover {
+				color: $first-main-color;
+			}
+		}
+
+		//recent comments widget
+		.recentcomments {
+			.comment-author-link {
+				position: relative;
+			}
+			a {
+				position: static;
+			}
+			&:hover {
+				a {
+					color: $first-main-color;
+					&:before {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		&.widget_calendar{
+			#prev,
+			#next {
+				padding-left: 0;
+				padding-right: 0;
+				a {
+					color: $first-main-color;
+				}
+			}
+			#prev {
+				text-align: left;
+			}
+			#next {
+				text-align: right;
+			}
+		}
+
+		&.widget_rss{
+			ul li{
+				margin-bottom:10px;
+			}
+		}
+
+		&.widget_categories{
+			.edgtf-separator{
+				margin-bottom: 19px;
+			}
+		}
+
+		&.widget_text .edgtf-separator-holder .edgtf-separator{
+			margin-bottom: 21px;
+		}
+
+		&.edgtf-separator-widget{
+			margin-bottom:0;
+		}
+
+		&.edgtf-latest-posts-widget{
+			.edgtf-blog-list-holder.edgtf-image-in-box .edgtf-item-text-holder{
+				border-bottom:none;
+				padding: 5px 0 0;
+			}
+			.edgtf-blog-list-holder.edgtf-image-in-box .edgtf-item-title {
+				line-height: 1.47em;
+			}
+		}
+
+		.edgtf-instagram-feed {
+			li {
+				padding: 0 10px 0 0;
+				margin-bottom: 10px;
+			}
+		}
+
+		.edgtf-give-forms-list.edgtf-gfl-minimal .edgtf-give-image-holder {
+			width: 110px;
+
+			img {
+				width: 100%;
+			}
+		}
+		.edgtf-give-forms-list.edgtf-gfl-minimal .edgtf-give-form-item:not(last-child) {
+			margin-bottom: 18px;
+		}
+	}
+
+	.edgtf-blog-list-holder{
+		> ul {
+			> li {
+				padding-left:0;
+				padding-bottom:0;
+
+				.edgtf-item-info-section {
+					font-weight: 700;
+				}
+
+				&:before{
+					display:none;
+				}
+			}
+		}
+	}
+
+
+}
+/* =========================================================================
+	#Widgets style = end
+============================================================================*/
+
+/* =========================================================================
+    #Widgets responsive styles
+===========================================================================*/
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+	.edgtf-sidebar .widget .edgtf-search-wrapper {
+		input[type='text'] {
+			width: calc(100% - 39px);
+		}
+		input[type='submit'] {
+			width: 35px;
+		}
+	}
+}

@@ -1,0 +1,85 @@
+.edgtf-working-hours-holder {
+	position: relative;
+	background-color: rgba(21,20,18,0.95);
+
+	.edgtf-wh-title {
+		color: #fff;
+		margin-bottom: 40px!important; /* this schortocode is added in Rev Slider */
+	}
+
+	.edgtf-wh-item {
+		position: relative;
+	}
+
+	.edgtf-wh-day {
+		padding-right: 6px;
+		display: table-cell;
+		width: 1%;
+		white-space: nowrap;
+		font-family: $default-heading-font;
+		font-size: 22px;
+		line-height: 45px;
+		color: #fff;
+		text-transform: uppercase;
+	}
+
+	.edgtf-wh-hours {
+		padding-left: 7px;
+		display: table-cell;
+		width: 1%;
+		white-space: nowrap;
+		color: #acacac;
+		font-family: $default-heading-font;
+		font-size: 22px;
+		line-height: 45px;
+
+		.edgtf-wh-closed {
+			color: $first-main-color;
+			text-transform: uppercase;
+		}
+	}
+
+	.edgtf-wh-line {
+		height: 3px;
+		display: table-cell;
+		width: 98%;
+		z-index: 1;
+		position: relative;
+
+		.edgtf-wh-line-inner {
+			display: block;
+			border-bottom: 1px solid rgba(168,164,161,0.25);
+		}
+	}
+
+	&.edgtf-wh-with-frame {
+
+		border: 2px solid #fff;
+
+		.edgtf-wh-holder-inner {
+			padding: 35px;
+		}
+
+	}
+
+	&.edgtf-wh-with-bg-image {
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		.edgtf-wh-holder-inner {
+			padding: 35px;
+		}
+
+	}
+
+	.edgtf-wh-footnote-holder {
+		margin-top: 45px;
+		
+		.edgtf-wh-footnote {
+			font-family: $default-heading-font;
+			font-size: 22px;
+			color: $first-main-color;
+			text-transform: uppercase;
+		}
+	}
+}

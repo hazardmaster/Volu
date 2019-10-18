@@ -1,0 +1,90 @@
+@import "blocks/logo";
+@import "blocks/widgets";
+@import "blocks/navigation/navigation";
+
+.edgtf-header-vertical {
+    .edgtf-content,
+    footer{
+        padding-left: $vertical-menu-width;
+        box-sizing: border-box;
+    }
+
+
+    .edgtf-vertical-menu-area {
+        position: fixed;
+        width: $vertical-menu-width;
+        top: 0;
+        left: 0;
+        padding: 40px 0;
+        background-color: transparent;
+        height: 100%;
+        z-index: 101;
+        -webkit-backface-visibility: hidden;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: none;
+    }
+
+    &.admin-bar .edgtf-vertical-menu-area {
+        top: 33px;
+    }
+
+    .edgtf-vertical-menu-area.edgtf-with-scroll {
+        overflow: hidden;
+    }
+
+    .edgtf-vertical-area-background {
+        position: fixed;
+        width: $vertical-menu-width;
+        height: 100%;
+        background-position: right top;
+        background-repeat: no-repeat;
+        background-color: #fff;
+        background-size: cover;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        opacity: 1;
+
+        @include edgtfTransition(opacity 0.5s ease, background-color 0.5s ease);
+    }
+
+	.edgtf-search-wrapper{
+		font-size:0;
+        position: relative;
+		#s{
+			border: 2px solid #565656;
+			padding: 0 14px;
+			@include edgtfBorderRadius(40px);
+			background: transparent;
+			outline:none;
+			height: 41px;
+			line-height: 41px;
+			vertical-align: middle;
+            width: 100%;
+            position: relative;
+            color: #858585;
+            box-sizing: border-box;
+            font-family: 'Open Sans', serif;
+            font-size: 13px;
+		}
+		#searchsubmit{
+			font-family: 'ElegantIcons', serif;
+            font-size: 13px;
+			-webkit-appearance: none!important;
+			background: transparent;
+			border: none;
+			outline:none!important;
+			cursor:pointer;
+			height: 41px;
+			line-height: 41px;
+			vertical-align: middle;
+			color:#fff;
+            position: absolute;
+            top: 0;
+            right: 10px;
+		}
+	}
+
+}

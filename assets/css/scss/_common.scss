@@ -1,0 +1,825 @@
+@import 'variables';
+@import 'mixins';
+
+/* ==========================================================================
+   #Comments styles - start
+   ========================================================================== */
+
+.edgtf-comment-holder {
+	margin: 0 0 73px;
+	padding-top: 30px;
+	box-sizing: border-box;
+
+	.edgtf-comment-image {
+		display: block;
+		width: 85px;
+		height: 85px;
+		border-radius: 100%;
+		overflow: hidden;
+		float: left;
+	}
+	.edgtf-pingback-comment {
+		.edgtf-comment-text {
+			padding: 0;
+		}
+	}
+	.edgtf-comment-text {
+		padding: 0 0 0 110px;
+		min-height: 85px;
+
+		.edgtf-text-holder {
+			> h1, 
+			> h2,
+			> h3,
+			> h4,
+			> h5,
+			> h6 {
+				padding: 15px 0;
+			}
+		}
+
+		.edgtf-comment-info {
+			display: inline-block;
+			width: 100%;
+			vertical-align: middle;
+		}
+
+		.edgtf-reply-edit-holder {
+			float: right;
+		}
+
+		.replay,
+		.comment-reply-link,
+		.comment-edit-link {
+			margin-left: 10px;
+			font-size: 14px;
+			line-height: 34px;
+			display: inline-block;
+			color: $first-main-color;
+			font-weight: 700;
+			position: relative;
+			@include edgtfTransition(background-color 0.3s ease-out, color 0.3s ease-out);
+
+			&:hover {
+				color: $default-heading-color;
+			}
+		}
+		.edgtf-comment-name {
+			float: left;
+		}
+
+		.edgtf-comment-date {
+			display: block;
+			clear: both;
+			margin-bottom: 25px;
+			font-family: $default-heading-font;
+			font-size: 12px;
+			line-height: 12px;
+			color: $first-main-color;
+		}
+	}
+
+	.edgtf-comments-closed{
+		padding-top:16px;
+	}
+
+}
+
+.comment-respond {
+
+	margin-top: 20px;
+
+	.comment-reply-title {
+		margin-bottom: 20px;
+
+		&.edgtf-comment-reply-title-registered {
+			margin-bottom: 0;
+		}
+	}
+
+	.logged-in-as {
+		padding: 0;
+		margin: 0;
+	}
+
+	.edgtf-comment-registered-user {
+		.logged-in-as {
+			margin-bottom: 20px;
+		}
+	}
+	p.form-submit {
+		margin: 0;
+		padding: 0;
+	}
+
+	.edgtf-two-columns-50-50 .edgtf-column .edgtf-column-inner {
+		padding: 0 12px!important;
+	}
+	.edgtf-two-columns-50-50 > .edgtf-two-columns-50-50-inner {
+		margin: 0 -12px;
+	}
+
+	input[type=submit].edgtf-btn:hover {
+		background-color: #212121;
+		border-color: #212121;
+	}
+
+
+}
+.edgtf-comment-list {
+	list-style: none;
+	position: relative;
+	z-index: 150;
+	padding: 0;
+	margin: 0;
+
+	li {
+		display: inline-block;
+		position: relative;
+		width: 100%;
+
+		.edgtf-comment {
+			padding-top: 45px;
+			padding-bottom: 52px;
+			border-bottom: 1px solid $default-border-color;
+
+			p {
+				margin: 0;
+			}
+		}
+
+		@for $i from 2 through 10 {
+			&.depth-#{$i} .edgtf-comment {
+				padding-left: 110px * ($i - 1);
+			}
+		}
+	}
+
+	.children {
+		padding: 0 0 0 0;
+	}
+}
+
+
+
+
+%input-style{
+	width: 100%;
+	margin-bottom: 20px;
+	padding: 15px 19px;
+	border: 1px solid #e1e1e1;
+	outline: 0;
+	font-family: $first-main-font;
+	font-size: 14px;
+	background-color: #f6f4ee;
+	color: #888;
+	@include edgtfBoxSizing(border-box);
+	vertical-align: middle;
+	-webkit-appearance: none;
+	border-radius: 5px;
+
+	&:focus{
+		border: 1px solid #e0e0e0;
+	}
+}
+
+::-webkit-input-placeholder {
+    color: #888;
+}
+:-moz-placeholder { 
+   color: #888;
+   opacity: 1;
+}
+::-moz-placeholder {
+   color: #888;
+   opacity: 1;
+}
+:-ms-input-placeholder {
+   color: #888;
+}
+
+.wpcf7-form-control{
+	&.wpcf7-text,
+	&.wpcf7-number,
+	&.wpcf7-date,
+	&.wpcf7-textarea,
+	&.wpcf7-select,
+	&.wpcf7-quiz{
+		@extend %input-style;
+	}
+}
+
+#respond textarea,
+#respond input[type='text'],
+.post-password-form input[type='password']{
+	@extend %input-style;
+}
+
+#submit_comment,
+.post-password-form input[type='submit'],
+input.wpcf7-form-control.wpcf7-submit{
+	display: inline-block;
+	width: auto;
+	font-family: 'Open Sans',sans-serif;
+	padding: 12px 40px;
+	line-height: 1.7em;
+	border: 2px solid $first-main-color;
+	font-size: 15px;
+	font-weight: 600;
+	color: #fff;
+	background-color: $first-main-color;
+    border-radius: 5em;
+	cursor: pointer;
+	@include edgtfTransition(all 0.15s ease-out);
+	
+	&:hover{
+		color: #fff;
+		background-color: #000;
+		border-color: #000;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+
+/* ==========================================================================
+   #Comments styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Contact Form 7 styles - start
+   ========================================================================== */
+
+div.wpcf7 img.ajax-loader {
+	display: none;
+}
+
+.edgtf-two-columns-form{
+	display:table;
+	width:100%;
+
+	.edgtf-column-inner {
+
+		vertical-align: middle;
+		display: table-cell;
+
+		&:last-child {
+			width: 1%;
+			text-align: left;
+			padding-left: 9px;
+		}
+		&:first-child {
+			padding-right: 9px;
+		}
+	}
+}
+
+.edgtf-newsletter-form {
+	.wpcf7-form-control.wpcf7-text {
+		width: 294px;
+		border: 2px solid #bbb;
+		margin: 22px;
+		background-color: transparent;
+		padding: 13px 21px;
+		font-family: $first-main-font;
+		border-radius: 5em;
+		font-size: 14px;
+		color: $default-text-color;
+        vertical-align: baseline;
+
+	}
+
+	::-webkit-input-placeholder {
+		color: $default-text-color;
+	}
+	:-moz-placeholder {
+		color: $default-text-color;
+		opacity: 1;
+	}
+	::-moz-placeholder {
+		color: $default-text-color;
+		opacity: 1;
+	}
+	:-ms-input-placeholder {
+		color: $default-text-color;
+	}
+
+	input.wpcf7-form-control.wpcf7-submit {
+		padding: 10px 44px;
+		font-size: 15px;
+		font-weight: 600;
+		border-radius: 5em;
+		text-transform: none;
+        letter-spacing: 0;
+	}
+	.ajax-loader {
+		display: none !important;
+	}
+}
+
+.edgtf-newsletter-form.light {
+
+    .wpcf7-form-control.wpcf7-text {
+        border-color: #f5f5f5;
+		color: #fff;
+    }
+
+	::-webkit-input-placeholder {
+		color: #fff;
+	}
+	:-moz-placeholder {
+		color: #fff;
+		opacity: 1;
+	}
+	::-moz-placeholder {
+		color: #fff;
+		opacity: 1;
+	}
+	:-ms-input-placeholder {
+		color: #fff;
+	}
+	input.wpcf7-form-control.wpcf7-submit:hover {
+		color: #000;
+		background-color: #fff;
+		border-color: #fff;
+	}
+}
+
+.edgtf-cf7-submit-right{
+	text-align: right;
+	.ajax-loader {
+		display: none !important;
+	}
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+/* ==========================================================================
+   #Contact Form 7 styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Pagination styles - start
+   ========================================================================== */
+
+.edgtf-container.edgtf-container-bottom-navigation {
+
+	background-color: $default-elements-background-color;
+	padding: 35px 0;
+
+	.edgtf-container-inner {
+		padding: 0 !important;
+		margin-top: 0 !important;
+		margin-bottom: 0 !important;
+	}
+
+}
+
+
+.edgtf-pagination-holder {
+
+	display:table;
+	table-layout:fixed;
+	width:100%;
+
+	.edgtf-pagination {
+		display:table-cell;
+		width: 100%;
+		vertical-align: middle;
+		position: relative;
+		text-align: center;
+
+		ul {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			float: left;
+			text-align: center;
+			display: block;
+
+			a,
+			&.active span {
+				position: relative;
+				display: inline-block;
+				padding: 0 13px;
+				margin: 0;
+				vertical-align: middle;
+				text-decoration: none;
+				font-weight: 700;
+				font-size: 18px;
+				font-family: $default-heading-font;
+				cursor: pointer;
+				white-space: nowrap;
+				box-sizing: content-box;
+				color: $default-heading-color;
+
+				&:hover {
+					color: #959595;
+				}
+
+			}
+			&.active span {
+				color: #959595;
+			}
+			&.edgtf-pagination-prev,
+			&.edgtf-pagination-next,
+			&.edgtf-pagination-first-page,
+			&.edgtf-pagination-last-page
+			{
+				position: absolute;
+				a{
+					font-size: 25px;
+					padding: 0;
+					color: #000;
+					&:hover {
+						color: $first-main-color;
+					}
+				}
+			}
+
+			&.edgtf-pagination-prev {
+				left: 0;
+				span {
+					display: inline-block;
+				}
+				
+				&.edgtf-pagination-prev-first {
+					left: 25px;
+				}
+			}
+			&.edgtf-pagination-first-page {
+				left: 0;
+			}
+
+			&.edgtf-pagination-next {
+				right: 0;
+				span {
+					display: inline-block;
+				}
+				
+				&.edgtf-pagination-next-last {
+					right: 25px;
+				}
+			}
+			&.edgtf-pagination-last-page {
+				right: 0;
+			}
+		}
+	}
+}
+
+
+/* ==========================================================================
+   #Pagination styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Slick Slider navigation - start
+   ========================================================================== */
+.edgtf-slick-slider{
+	opacity:0;
+	&.slick-initialized{
+		opacity:1;
+	}
+}
+.edgtf-slick-slider-navigation-style {
+
+	&:not(.edgtf-portfolio-media) .slick-list{
+		padding:10px 0;
+	}
+
+	.edgtf-slick-prev,
+	.edgtf-slick-next {
+
+		position: absolute;
+		z-index: 100;
+		top: 50%;
+		display: block;
+		padding: 0;
+		cursor: pointer;
+		border: none;
+		outline: none;
+		font-size: 40px;
+		color: $first-main-color;
+		@include edgtfTransform(translateY(-50%))
+	}
+
+	.edgtf-slick-prev {
+		left: 0;
+	}
+
+	.edgtf-slick-next {
+		right: 0;
+	}
+
+	.edgtf-slick-dots {
+		text-align: center;
+		margin: 25px 0 0 0;
+		padding: 0;
+		position: absolute;
+		width: 100%;
+		top: 100%;
+
+		li {
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: #fff;
+			box-sizing: border-box;
+			display: inline-block;
+			margin: 0 11px;
+			cursor:pointer;
+			position:relative;
+
+			&.slick-active {
+				background-color: $first-main-color;
+			}
+
+			&:first-child{
+				margin-left:0
+			}
+
+			&:last-child{
+				margin-right:0
+			}
+
+			button{
+				display:none;
+			}
+
+		}
+	}
+
+}
+
+/* ==========================================================================
+   #Slick Slider navigation - end
+   ========================================================================== */
+
+
+/* ==========================================================================
+   #404 styles - start
+   ========================================================================== */
+
+.edgtf-404-page{
+	padding: 0;
+}
+
+.edgtf-page-not-found{
+
+	margin: 40px 0 85px;
+	text-align: center;
+	padding: 0 20%;
+
+	.edgtf-page-not-found-top {
+		font-family: $default-heading-font;
+		font-size: 150px;
+		font-weight: 700;
+		letter-spacing: -0.05em;
+		color: #313131;
+		line-height: 1em;
+		display: block;
+	}
+	.edgtf-separator {
+		width: 55px;
+		border-bottom-width: 3px;
+		margin-top: 9px;
+		margin-bottom: 33px;
+	}
+	h3 {
+		margin-bottom: 24px;
+	}
+
+	p {
+		margin-bottom: 34px;
+		line-height: 30px;
+	}
+}
+
+/* ==========================================================================
+   #404 styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Back to Top styles - start
+   ========================================================================== */
+$back-to-top-size: 36px;
+
+#edgtf-back-to-top{
+    position: fixed;
+    width:$back-to-top-size;
+    right: $back-to-top-size;
+    bottom: 65px;
+    margin: 0;
+    z-index: 10000;
+    @include edgtfTransition(opacity 0.15s ease-out, visibility 0.15s ease-out);
+    opacity: 0;
+    visibility: hidden;
+}
+#edgtf-back-to-top.off{
+    opacity: 0;
+    visibility: hidden;
+}
+    
+#edgtf-back-to-top.on{
+    opacity: 1;
+    visibility: visible;
+}
+
+#edgtf-back-to-top > span {
+	width:$back-to-top-size;
+	height: $back-to-top-size;
+	line-height:$back-to-top-size;
+	text-align:center;
+    display: block;
+	color: #fff;
+    font-size:20px;
+	background-color: $first-main-color;
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+#edgtf-back-to-top span span {
+	display: block;
+	line-height: inherit;
+	margin-left: -1px;
+
+	&:before {
+		display: inline-block;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+	}
+}
+
+#edgtf-back-to-top:hover span span {
+	&:before {
+		-webkit-animation-name: hover-icon-up;
+		animation-name: hover-icon-up;
+		-webkit-animation-duration: 0.35s;
+		animation-duration: 0.35s;
+		-webkit-animation-timing-function: ease-out;
+		animation-timing-function: ease-out;
+	}
+}
+
+/* Icon Up */
+@-webkit-keyframes hover-icon-up {
+	0%,
+	50%,
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	25% {
+		-webkit-transform: translateY(4px);
+		transform: translateY(4px);
+	}
+	75% {
+		-webkit-transform: translateY(-6px);
+		transform: translateY(-6px);
+	}
+}
+
+@keyframes hover-icon-up {
+	0%,
+	50%,
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+	25% {
+		-webkit-transform: translateY(4px);
+		transform: translateY(4px);
+	}
+	75% {
+		-webkit-transform: translateY(-6px);
+		transform: translateY(-6px);
+	}
+}
+/* ==========================================================================
+   #Back to Top styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Self Hosted Video styles - start
+   ========================================================================== */
+.edgtf-self-hosted-video-holder{
+	.edgtf-video-wrap{
+		.mejs-container,
+		.mejs-overlay-play{
+			height: 100% !important; /*!important because of the inline style*/
+			width: 100% !important; /*!important because of the inline style*/
+		}
+	}
+}
+
+/* ==========================================================================
+   #Self Hosted Video styles - end
+   ========================================================================== */
+
+/* ==========================================================================
+   #Screen reader text - start
+   ========================================================================== */
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+
+	&:focus {
+		background-color: #f1f1f1;
+		border-radius: 3px;
+		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+		clip: auto !important;
+		color: #21759b;
+		display: block;
+		font-size: 14px;
+		font-size: 0.875rem;
+		font-weight: bold;
+		height: auto;
+		left: 5px;
+		line-height: normal;
+		padding: 15px 23px 14px;
+		text-decoration: none;
+		top: 5px;
+		width: auto;
+		z-index: 100000; /* Above WP toolbar. */
+	}
+
+}
+
+/* ==========================================================================
+   #Screen reader text - end
+   ========================================================================== */
+
+
+/* ==========================================================================
+   #jQuery Datepicker styles - start
+   ========================================================================== */
+#ui-datepicker-div {
+	z-index: 1000 !important;
+	background-color: #fff;
+	min-width: 271px;
+
+	@include edgtfBoxShadow(0 0 2px #ddd);
+	font-size: 12px;
+
+	table tr {
+		border: none;
+	}
+
+    table {
+        padding: 0 4px 4px;
+    }
+
+	table td {
+		padding: 3px;
+		line-height: 1.5em;
+	}
+
+	.ui-datepicker-header {
+		padding: 5px 16px;
+		position: relative;
+	}
+
+	.ui-datepicker-next,
+	.ui-datepicker-prev {
+		position: absolute;
+		font-size: 14px;
+	}
+
+	.ui-datepicker-prev {
+		left: 12px;
+	}
+
+	.ui-datepicker-next {
+		right: 12px;
+	}
+
+	.ui-datepicker-title {
+		text-align: center;
+	}
+
+	.ui-datepicker-today {
+		color: #fff;
+		background-color: $first-main-color;
+
+		a {
+			color: #fff;
+		}
+	}
+}
+
+/* ==========================================================================
+   #jQuery Datepicker styles - end
+   ========================================================================== */

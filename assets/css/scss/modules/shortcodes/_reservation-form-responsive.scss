@@ -1,0 +1,52 @@
+@media screen and (max-width: 1200px) and (min-width: $ipad-portrait) {
+	.edgtf-rf-holder {
+		.edgtf-rf-col-holder,
+		.edgtf-rf-col-holder.edgtf-rf-time-col {
+			width: 23%;
+		}
+
+		.edgtf-rf-col-holder.edgtf-rf-btn-holder {
+			width: 31%;
+		}
+	}
+}
+
+@include ipad-landscape {
+	.edgtf-rf-holder {
+		.edgtf-rf-row {
+			margin-left: -15px;
+			margin-right: -15px;
+			width: auto;
+		}
+
+		.edgtf-rf-col-holder,
+		.edgtf-rf-col-holder.edgtf-rf-btn-holder,
+		.edgtf-rf-col-holder.edgtf-rf-time-col {
+			width: 50%;
+			padding: 0 15px;
+			margin-bottom: 30px;
+
+			@include edgtfBoxSizing(border-box);
+
+			.edgtf-rf-field-holder {
+				width: 100%;
+			}
+		}
+
+		.edgtf-rf-label {
+			display: none;
+		}
+	}
+
+
+}
+
+@include phone-landscape {
+	.edgtf-rf-holder {
+		.edgtf-rf-col-holder,
+		.edgtf-rf-col-holder.edgtf-rf-btn-holder,
+		.edgtf-rf-col-holder.edgtf-rf-time-col {
+			width: 100%;
+		}
+	}
+}

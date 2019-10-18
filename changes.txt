@@ -1,0 +1,56 @@
+2.3.1
+- Updated WPBakery Page Builder to 6.0.2
+- Improved Ajax functionality
+
+2.3
+- Added WooCommerce 3.6.2 compatibility
+- Added compatibility with Gutenberg plugin
+- Updated WPBakery Page Builder to 5.7
+- Updated Revolution Slider to 5.4.8.3
+- Updated Core Plugin to 1.1
+- Updated pot file
+- Improved import functionality
+- Improved theme security
+- Improved framework files
+
+2.2
+- Added WooCommerce 3.4.5 compatibility
+- Added compatibility with Gutenberg plugin
+- Added compatibility with PHP 7.2
+- Added Give 2.2.3 compatibility
+- Updated WPBakery Page Builder to 5.5.2
+- Updated Revolution Slider to 5.4.8
+- Updated Envato Market to 2.0.1
+- Fixed issue with http/https links
+- Fixed invalid content in pot file
+- Fixed non linking image in blog list
+
+2.1
+- Added WooCommerce 3.3.5 compatibility
+- Added Give 2.0.6 compatibility
+- Updated Visual Composer to 5.4.7
+- Updated Revolution slider to 5.4.7.3
+- Fixed http/https issue when inserting embed video
+
+2.0.1
+- Fixed Blog List > Boxes template image navigation link
+
+2.0
+- Changed theme name
+
+1.2
+- Added WooCommerce 3.2.6 compatibility
+- Added Envato Market plugin as required
+- Added recommended plugins (WooCommerce and Contact Form 7)
+- Added Give 1.8.11 compatibility
+- Updated Visual Composer to 5.4.5
+- Updated Revolution slider to 5.4.6.4
+- Updated Edge CPT to 1.0.1
+- Fixed potential security issue when saving theme options
+- Fixed header misalignment on latest chrome version
+- Improved menu import functionality
+
+1.1
+- Added WooCommerce 3.1 compatibility
+- Updated Visual Composer to 5.2
+- Updated Revolution Slider to 5.4.5.1

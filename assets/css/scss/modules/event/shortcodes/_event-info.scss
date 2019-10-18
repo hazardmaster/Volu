@@ -1,0 +1,33 @@
+/* ==========================================================================
+   #Event Info styles
+   ========================================================================== */
+
+.edgtf-event-single-info{
+	.edgtf-esi-item{
+		display: table;
+		width: 100%;
+		table-layout: fixed;
+		color: #303030;
+		font-size: 12px;
+		font-weight: 700;
+		text-transform: uppercase;
+
+		.edgtf-esi-title{
+			display: table-cell;
+			width: 33.33%;
+		}
+
+		.edgtf-esi-desc{
+			display: table-cell;
+			color: #6c6c6c;
+		}
+
+		a{
+			color: inherit;
+		}
+
+		a:hover{
+			color: $first-main-color;
+		}
+	}
+}

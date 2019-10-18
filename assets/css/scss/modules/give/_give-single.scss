@@ -1,0 +1,96 @@
+.edgtf-give-single{
+
+	&.give-display-onpage{
+		.edgtf-give-content{
+			margin-top: 30px;
+		}
+	}
+
+	&.give-display-modal{
+
+		.give-donation-amount,
+		.give-total-wrap,
+		.give-select.give-donation-levels-wrap,
+		.give-donation-levels-wrap,
+		.give-custom-amount-text{
+			display: none !important; //because of the inline styles
+		}
+
+		.edgtf-give-btn{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 28px;
+			background-color: rgba(0,0,0, 0.53);
+			box-sizing: border-box;
+		}
+
+		.edgtf-give-content + .edgtf-give-top-content{
+			margin-top: 55px;
+		}
+	}
+
+	&.give-display-button-only{
+		.edgtf-give-content,
+		.edgtf-give-top-content{
+			display: block !important; //because of the default give styles
+		}
+	}
+
+	.edgtf-give-top-content{
+		position: relative;
+
+		.images{
+			margin-bottom: 18px;
+		}
+	}
+
+	form.give-form{
+		margin-bottom: 0;
+
+		.edgtf-btn{
+			margin-bottom: 0;
+		}
+	}
+
+	.edgtf-give-form-title{
+		margin-bottom: 23px;
+	}
+
+	.edgtf-give-content{
+		border-bottom: 2px solid #f4f4f4;
+		padding-bottom: 9px;
+		margin-bottom: 40px;
+	}
+
+	.edgtf-give-progress{		
+		padding: 22px 25px;
+		background-color: $default-elements-background-color;
+		margin-bottom: 48px;
+
+		&.give-goal-progress {
+			margin-bottom: 48px;
+		}
+	}
+}
+
+.give-modal{
+	.mfp-content{
+
+		.give-donation-amount,
+		.give-total-wrap,
+		.give-select.give-donation-levels-wrap,
+		.give-donation-levels-wrap,
+		.give-custom-amount-text{
+			display: block !important; //because of the inline styles
+		}
+	}
+}
+
+.single-give_forms {
+	.edgtf-content .edgtf-content-inner > .edgtf-container > .edgtf-container-inner,
+	.edgtf-content .edgtf-content-inner > .edgtf-full-width > .edgtf-full-width-inner {
+		padding: 70px 0;
+	}
+}

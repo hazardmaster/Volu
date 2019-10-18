@@ -1,0 +1,113 @@
+/* ==========================================================================
+   #Event Full Width styles
+   ========================================================================== */
+.edgtf-event-list-holder.edgtf-event-list-full-width{
+	.edgtf-el-item{
+		position: relative;
+		text-align: center;
+		padding: 11% 0;
+		visibility: hidden;
+		overflow: hidden;
+
+		.touch & {
+			visibility: visible;
+		}
+
+		.no-touch & {
+			visibility: visible;
+			.edgtf-el-content-holder {
+				opacity: 0;
+				@include edgtfTransform(translate3d(0, 50%, 0));
+			}
+
+			&.edgtf-appeared {
+				.edgtf-el-content-holder {
+					opacity: 1;
+					@include edgtfTransform(translate3d(0,0,0));
+					@include edgtfTransition(all .5s cubic-bezier(0,0,0,.9));
+				}
+			}
+		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+		}
+
+		.edgtf-el-item-background{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $default-elements-background-color; //fallback color if image is not set
+			background-position: center;
+			background-size: cover;
+			z-index: -2;
+		}
+
+		.edgtf-el-item-cats{
+			font-size: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			margin-bottom: 6px;
+
+			.edgtf-item-info-category{
+				color: inherit;
+			}
+		}
+
+
+		.edgtf-el-item-title{
+			font-size: 120px;
+		}
+
+		.edgtf-el-item-date{
+			font-size: 25px;
+			font-weight: 700;
+			font-family: $default-heading-font;
+			letter-spacing: 2px;
+
+		}
+
+		.edgtf-btn{
+			margin-top: 27px;
+		}
+	}
+		
+	.edgtf-el-item.edgtf-el-item-odd{
+		&:after{
+			background-color: transparentize($default-elements-background-color, 0.2);
+		}
+
+		.edgtf-btn:hover{
+			background-color: #303030;
+		}
+	}
+
+	.edgtf-el-item.edgtf-el-item-even{
+		&:after{
+			background-color: transparentize(#393939, 0.2);
+		}
+
+		.edgtf-el-item-cats .edgtf-item-info-category:hover{
+			color: $first-main-color;
+		}
+	}
+
+	&.edgtf-event-list-parallax{
+		.edgtf-el-item-background {
+			background-repeat: no-repeat;
+			background-color: transparent;
+			background-position: center 0px;
+			background-attachment: fixed;
+			overflow: hidden;
+		}
+	}
+}

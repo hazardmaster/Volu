@@ -1,0 +1,119 @@
+.edgtf-rf-holder {
+	input[type=text],
+	select {
+		border: none;
+		outline: none;
+		background-color: transparent;
+	}
+
+	.edgtf-rf-col-holder {
+		float: left;
+		width: 28%;
+
+		&.edgtf-rf-btn-holder {
+			width: 18.5%;
+		}
+
+		&.edgtf-rf-time-col {
+			width: 25.5%;
+
+			.edgtf-rf-field-holder {
+				width: 82%;
+			}
+		}
+	}
+
+	.edgtf-rf-field-holder {
+		width: 74.5%;
+		float: left;
+		background-color: #fff;
+		position: relative;
+
+		select,
+		input[type=text] {
+			padding-top: 18px;
+			padding-bottom: 18px;
+			padding-left: 15px;
+			padding-right: 45px;
+			display: block;
+			width: 100%;
+			font-family: $first-main-font;
+			font-style: italic;
+			color: $second-main-color;
+			font-size: 14px;
+			margin: 0;
+			font-weight: 600;
+
+			@include edgtfBorderRadius(0);
+			@include edgtfBoxSizing(border-box);
+
+		}
+
+		input[type=text] {	
+
+			&::-webkit-input-placeholder {
+				color: $second-main-color;
+			}
+
+			&:-moz-placeholder {
+				color: $second-main-color;
+				opacity: 1;
+			}
+
+			&::-moz-placeholder {
+				color: $second-main-color;
+				opacity: 1;
+			}
+		}
+
+		select {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			text-indent: 1px;
+			cursor: pointer;
+
+			&::-ms-expand {
+				display: none;
+			}
+		}
+
+		.edgtf-rf-icon {
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 55px;
+			line-height: 55px;
+			height: 100%;
+			font-size: 22px;
+			text-align: center;
+			border-left: 2px solid $default-elements-background-color;
+
+			i {
+				color: $first-main-color;
+				vertical-align: baseline;
+			}
+		}
+
+		@include edgtfBoxSizing(border-box);
+	}
+
+	.edgtf-rf-label {
+		width: 25.4%;
+		text-align: center;
+		display: inline-block;
+		line-height: 55px;
+		font-size: 18px;
+		font-weight: 700;
+		font-family: $default-heading-font;
+		text-transform: uppercase;
+		color: $second-main-color;
+	}
+
+	.edgtf-rf-copyright {
+		font-family: $first-main-font;
+		font-style: italic;
+		font-size: 12px;
+		color: $second-main-color;
+		opacity: 0.72;
+	}
+}

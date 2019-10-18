@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Project presentation shortcode start styles
+   ========================================================================== */
+
+.edgtf-project-presentation {
+
+    img {
+        display: block;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &.presentation-left,
+    &.presentation-right {
+
+        .edgtf-pp-content-holder {
+            @include edgtfTableLayout;
+
+            .edgtf-pp-content-left,
+            .edgtf-pp-content-right {
+                position: relative;
+                display: table-cell;
+                height: 100%;
+                width: 50%;
+                vertical-align: middle;
+                text-align: left;
+            }
+
+            .edgtf-pp-text-holder {
+                padding: 14% 9% 16% 10%;
+                background-size: cover;
+                background-position: center;
+            }
+
+            .edgtf-pp-subtitle {
+                margin: 25px 0 0 0;
+            }
+
+            .edgtf-pp-button {
+               margin-top: 40px;
+            }
+
+        }
+
+    }
+
+    .edgtf-pp-gallery-slider {
+        position: relative;
+    }
+
+    .edgtf-slick-dots {
+        position: absolute;
+        right: 19px;
+        top: 50%;
+        @include edgtfTransform(translateY(-50%));
+
+        li {
+            width: 10px;
+            height: 10px;
+            @include edgtfBorderRadius(50%);
+            background-color: #ebebeb;
+            box-sizing: border-box;
+            margin: 20px 0;
+            cursor: pointer;
+            position: relative;
+            list-style: none;
+
+            .edgtf-slick-dot-inner {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 10px;
+                height: 10px;
+                @include edgtfBorderRadius(50%);
+                @include edgtfTransform(scale(.6));
+                opacity: 0;
+                background-color: $first-main-color;
+                @include edgtfTransition(all 0.4s cubic-bezier(0.68, -0.55, 0.27, 2));
+            }
+        }
+
+        li.slick-active {
+            .edgtf-slick-dot-inner {
+                opacity: 1;
+                @include edgtfTransform(scale(1.2));
+            }
+        }
+    }
+
+    .edgtf-pp-content-left .edgtf-pp-gallery .edgtf-pp-gallery-slider {
+        .edgtf-slick-dots {
+            left: 19px;
+        }
+    }
+
+    &.edgtf-project-presentation-light {
+        color: #fff;
+        .edgtf-btn.edgtf-btn-transparent,
+        .edgtf-pp-title  {
+            color: #fff;
+        }
+    }
+
+}
+
+/* ==========================================================================
+   Project presentation  shortcode end styles
+   ========================================================================== */

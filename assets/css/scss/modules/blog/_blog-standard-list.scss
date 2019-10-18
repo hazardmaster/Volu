@@ -1,0 +1,16 @@
+.edgtf-blog-holder {
+    &.edgtf-blog-type-standard {
+        article {
+            .edgtf-post-text {
+                padding: 37px 0 0 0;
+            }
+
+            &.format-link,
+            &.format-quote {
+            	.edgtf-post-content .edgtf-post-text .edgtf-post-text-inner .edgtf-post-info-bottom {
+            		border-top: 3px solid #efefef;
+            	}
+            }
+        }
+    }
+}

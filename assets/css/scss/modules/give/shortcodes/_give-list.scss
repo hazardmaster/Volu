@@ -1,0 +1,157 @@
+.edgtf-give-forms-list{
+	position: relative;
+	width: 100%;
+
+	&.edgtf-gfl-standard{
+
+		.edgtf-give-forms-list-inner{
+			font-size: 0;
+			margin: -17px;
+		}
+
+		&.edgtf-columns-1{
+			.edgtf-give-form-item{
+				width: 100%;
+			}
+		}
+
+		&.edgtf-columns-2{
+			.edgtf-give-form-item{
+				width: 50%;
+			}
+		}
+
+		&.edgtf-columns-3{
+			.edgtf-give-form-item{
+				width: 33.33%;
+			}
+		}
+
+		&.edgtf-columns-4{
+			.edgtf-give-form-item{
+				width: 25%;
+			}
+		}
+
+		&.edgtf-columns-5{
+			.edgtf-give-form-item{
+				width: 20%;
+			}
+		}
+
+		.edgtf-give-form-item{
+			display: inline-block;
+			vertical-align: top;
+			padding: 17px;
+			box-sizing: border-box;
+		}
+
+		.edgtf-give-top-holder{
+			position: relative;
+			overflow: hidden;
+
+			.edgtf-give-top-link{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 5;
+			}
+
+			.edgtf-give-top-image img{
+				vertical-align: middle;
+			}
+
+			.edgtf-give-top-button{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				padding: 25px;
+				box-sizing: border-box;
+				background-color: rgba(0, 0, 0, 0.4);
+				text-align: center;
+				@include edgtfTransform(translateY(100%));
+				-webkit-transition: -webkit-transform .35s cubic-bezier(0.14, 0.41, 0.58, 1);
+				transition: transform .35s cubic-bezier(0.14, 0.41, 0.58, 1);
+				z-index: 10;
+			}
+
+			&:hover{
+				.edgtf-give-top-button{
+					@include edgtfTransform(translateY(0));
+				}
+			}
+		}
+
+		.edgtf-gf-content-holder{
+			font-size: 14px;
+			background-color: $default-elements-background-color;
+			padding: 30px 36px 44px;
+			box-sizing: border-box;
+
+			.edgtf-gf-cats{
+				text-transform: capitalize;
+				margin-bottom: 10px;
+
+				&:hover {
+					a {
+						color:#212121;
+					}
+				}
+			}
+
+			.edgtf-gf-title{
+				margin-bottom: 24px;
+			}
+
+			.edgtf-gf-content p{
+				margin-bottom: 16px;
+			}
+
+			.edgtf-give-button-holder{
+				margin-top: 20px;
+			}
+
+			.give-goal-progress .income{
+				font-size: 30px;
+			}
+
+			.edgtf-progress-bar .edgtf-progress-content-outer {
+				background-color: #ddd!important;
+			}
+		}
+	}
+
+	&.edgtf-gfl-minimal{
+		.edgtf-give-form-item{
+			display: table;
+			width: 100%;
+		}
+
+		.edgtf-give-image-holder{
+			display: table-cell;
+			vertical-align: top;
+			width: 33%;
+		}
+
+		.edgtf-gf-minimal-holder{
+			display: table-cell;
+			vertical-align: top;
+			padding-left: 25px;
+
+			.edgtf-gf-title{
+				margin-bottom: 5px;
+			}
+		}
+
+		.edgtf-gf-date{
+			color: $first-main-color;
+			font-size: 12px;
+			font-weight: 700;
+			font-family: $default-heading-font;
+		}
+	}
+
+}

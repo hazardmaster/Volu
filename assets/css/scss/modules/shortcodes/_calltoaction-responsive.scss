@@ -1,0 +1,81 @@
+/* ==========================================================================
+# Call to action responsive style - begin
+========================================================================== */
+
+.edgtf-call-to-action {
+
+	.edgtf-call-to-action-row-75-25 .edgtf-call-to-action-column1 {
+
+		@media only screen and (min-width: $phone-landscape) and (max-width: $ipad-landscape) {
+			width: 65%;
+		}
+
+	}
+
+	.edgtf-call-to-action-row-75-25 .edgtf-call-to-action-column2 {
+
+		@media only screen and (min-width: $phone-landscape) and (max-width: $ipad-landscape) {
+			width: 35%;
+		}
+
+	}
+
+	.edgtf-call-to-action-cell {
+
+		@include phone-landscape {
+			display: block;
+			text-align: center !important;
+			width: 100% !important;
+		}
+
+	}
+
+	.edgtf-text-wrapper .edgtf-call-to-action-icon-holder {
+
+		@include phone-landscape {
+			position: relative;
+			width: 100%;
+			text-align: center;
+			padding-left: 0;
+		}
+
+	}
+
+	.edgtf-text-wrapper .edgtf-call-to-action-icon {
+
+		@include phone-landscape {
+			display: inline-block;
+		}
+
+	}
+
+	.edgtf-text-wrapper .edgtf-call-to-action-text {
+
+		@include phone-landscape {
+			text-align: center!important; //overriding text align shortcode option (inline-style)
+			margin-bottom: 20px;
+		}
+
+	}
+
+	&.with-icon .edgtf-text-wrapper .edgtf-call-to-action-text {
+
+		@include phone-landscape {
+			padding:0 20px;
+		}
+
+	}
+
+}
+
+.edgtf-call-to-action.with-icon {
+
+	@include phone-landscape {
+		padding: 0;
+	}
+
+}
+
+/* ==========================================================================
+# Call to action responsive style - end
+========================================================================== */

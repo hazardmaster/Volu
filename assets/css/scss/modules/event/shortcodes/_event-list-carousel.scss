@@ -1,0 +1,150 @@
+/* ==========================================================================
+   #Event List Carousel styles
+   ========================================================================== */
+.edgtf-event-list-holder.edgtf-event-list-carousel {
+
+	.edgtf-event-list-holder-inner {
+		margin: 0 -17px;
+	}
+
+	.edgtf-el-item {
+
+		.edgtf-el-item-inner {
+			padding: 0 17px;
+		}
+
+		.edgtf-el-item-image {
+
+			a {
+
+				&:before {
+					content:"";
+					background:rgba(0,0,0,0.25);
+					opacity:0;
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					@include edgtfTransition(all 0.3s ease-in-out);
+				}
+
+				&:hover {
+					&:before {
+						opacity:1;
+					}
+				}
+			}
+
+			img {
+				vertical-align: middle;
+			}
+		}
+
+		.edgtf-el-item-image {
+			position: relative;
+		}
+
+		.edgtf-el-item-date {
+
+			display: inline-block;
+    		position: absolute;
+    		top: 0;
+    		padding: 11px 17px;
+    		background-color: transparentize($first-main-color, 0.1);
+    		font-family: $default-heading-font;
+    		color: #fff;
+    		text-align: center;
+
+			.edgtf-el-item-day{
+				font-size: 22px;
+				line-height: 1em;
+				font-weight: 700;
+			}
+
+			.edgtf-el-item-my {
+				.edgtf-el-item-month {
+					display: block;
+					font-size: 14px;
+					font-weight: 700;
+					line-height: 15px;
+					text-transform: lowercase;
+				}
+			}
+		}
+
+		.edgtf-el-item-content {
+
+			background-color: $default-elements-background-color;
+			padding: 35px;
+
+			.edgtf-el-item-location-title-holder {
+
+				.edgtf-el-item-title {
+					margin-bottom: 8px;
+				}
+
+				.edgtf-el-item-time,
+				.edgtf-el-item-location {
+					display: inline-block;
+					color: $first-main-color;
+					font-family: $default-heading-font;
+					font-weight: 700;
+				}
+
+				.edgtf-el-read-more-link {
+
+					margin-top: 33px;
+
+					a {
+						color: #212121;
+						font-weight: 600;
+
+						&:hover {
+							color: $first-main-color;
+						}
+					}
+				}
+			}
+		}
+	}
+
+    .edgtf-slick-dots {
+	    text-align: center;
+	    margin: 25px 0 0 0;
+	    padding: 0;
+	    width: 100%;
+	    top: 100%;
+
+	    li {
+		    width: 10px;
+		    height: 10px;
+		    border-radius: 50%;
+		    //border: 1px solid #5e5e5e;
+		    background-color: $first-main-color;
+		    box-sizing: border-box;
+		    display: inline-block;
+		    margin: 0 8px;
+		    cursor:pointer;
+		    position:relative;
+
+
+		    &.slick-active {
+			    width: 13px;
+			    height: 13px;
+			    opacity:1;
+			    background-color: $default-text-color;
+			    margin: 0 5px;
+			    @include edgtfTransition(width 0.2s ease-out,margin 0.2s ease-out);
+		    }
+
+		    &:first-child{
+			    margin-left:0
+		    }
+
+		    &:last-child{
+			    margin-right:0
+		    }
+	    }
+    }
+}

@@ -1,0 +1,65 @@
+@include ipad-landscape {
+	.edgtf-comment-list {
+		li.depth-2 .edgtf-comment {
+			padding-left: 50px;
+		}
+		li.depth-3 .edgtf-comment {
+			padding-left: 70px;
+		}
+		li.depth-4 .edgtf-comment {
+			padding-left: 90px;
+		}
+		li.depth-5 .edgtf-comment {
+			padding-left: 110px;
+		}
+	}
+}
+
+@include ipad-portrait{
+	.edgtf-comment-form .edgtf-two-columns-50-50 > .edgtf-two-columns-50-50-inner {
+		margin: 0;
+	}
+}
+
+@include phone-landscape {
+	.edgtf-comment-holder .edgtf-comment-text .edgtf-reply-edit-holder {
+		float: left;
+		margin: 5px 0;
+	}
+
+	.edgtf-comment-holder .edgtf-comment-text .edgtf-comment-name {
+		float: none;
+	}
+
+	.edgtf-comment-holder .edgtf-comment-text .replay,
+	.edgtf-comment-holder .edgtf-comment-text .comment-reply-link,
+	.edgtf-comment-holder .edgtf-comment-text .comment-edit-link {
+		margin: 0 10px 0 0;
+	}
+
+	.edgtf-comment-holder .edgtf-comment-text {
+		padding: 0 0 0 100px;
+		min-height: 70px;
+	}
+	.edgtf-comment-holder .edgtf-comment-image {
+		width: 70px;
+		height: 70px;
+	}
+
+	.edgtf-page-not-found .edgtf-page-not-found-top {
+		font-size: 90px;
+	}
+	.edgtf-page-not-found {
+		padding: 0 10%;
+	}
+
+	.edgtf-newsletter-form {
+		.wpcf7-form-control.wpcf7-text {
+			margin: 15px 10px 15px 0;
+			width: 150px;
+		}
+		input.wpcf7-form-control.wpcf7-submit {
+			padding: 10px 30px;
+		}
+	}
+}

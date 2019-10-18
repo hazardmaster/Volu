@@ -1,0 +1,222 @@
+/* ==========================================================================
+   Masonry Gallery - start
+   ========================================================================== */
+
+.edgtf-masonry-gallery-grid-sizer{
+	width: 25%;
+}
+
+.edgtf-masonry-gallery-holder{
+	margin: -15px -15px 0 -15px;
+	opacity: 0;
+
+	.edgtf-masonry-gallery-item {
+		box-sizing: border-box;
+		padding: 15px;
+		z-index: 1;
+		width: 25%;
+
+		.edgtf-masonry-gallery-item-subtitle {
+			font-family: $first-main-font;
+			font-style: italic;
+			margin: 0;
+			font-size: 20px;
+			margin-bottom: 7px;
+		}
+
+		.edgtf-masonry-gallery-item-text {
+			margin: 0;
+			font-family: $first-main-font;
+			font-size: 16px;
+			font-style: italic;
+			color: #acacac;
+			line-height: 28px;
+		}
+
+		.edgtf-masonry-gallery-read-more {
+			position: absolute;
+			bottom: 22px;
+			left: 28px;
+			font-size: 12px;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			span {
+				display: inline-block;
+			    vertical-align: middle;
+			    margin-left: 5px;
+			    -webkit-transition: -webkit-transform .3s ease;
+			    transition: transform .3s ease;
+			    position: relative;
+			    font-size: 20px;
+			    top: -1px
+			}
+
+			&:hover span {
+			    @include edgtfTransform(translateX(5px));
+			}
+
+		}
+
+		&.edgtf-mg-square-big {
+			width: 50%;
+		}
+
+		&.edgtf-mg-rectangle-landscape {
+			width: 50%;
+
+			.edgtf-masonry-gallery-image-holder{
+				img {
+					max-height: inherit;
+				}
+			}
+		}
+
+		&.edgtf-mg-rectangle-portrait {
+			.edgtf-masonry-gallery-image-holder{
+				img {
+					max-width: inherit;
+					width: auto;
+					height: 100%;
+				}
+			}
+		}
+
+		.edgtf-masonry-gallery-image-holder{
+			height: 100%;
+			width: 100%;
+			position: relative;
+			overflow: hidden;
+			@include edgtfTransform(translateZ(0px));
+		}
+
+		.edgtf-masonry-gallery-item-outer {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			text-align: left;
+			box-sizing: border-box;
+			padding: 15px;
+		}
+
+		.edgtf-masonry-gallery-item-inner {
+			position: relative;
+			height: 100%;
+			width: 100%;
+			display: table;
+		}
+
+		.edgtf-masonry-gallery-item-content {
+			display: table-cell;
+			vertical-align: middle;
+			padding: 28px;
+		}
+
+		&.edgtf-mg-simple {
+
+			.edgtf-masonry-gallery-item-outer:not(.edgtf-masonry-gallery-image-background) .edgtf-masonry-gallery-item-inner {
+				background-color: $first-main-color;
+			}
+
+			.edgtf-masonry-gallery-item-inner {
+
+				.edgtf-masonry-gallery-item-content { 
+
+					background-color: transparent;
+					@include edgtfTransition(background-color .25s cubic-bezier(0.45, 0.05, 0.55, 0.95));
+
+				.edgtf-masonry-gallery-item-subtitle {
+					color: #fff;
+				}
+
+				.edgtf-masonry-gallery-item-title {
+					color: #fff;
+				}
+
+				&.edgtf-masonry-gallery-item-content-center {
+					text-align: center;
+				}
+
+				&.edgtf-masonry-gallery-item-content-right {
+					text-align: right;
+				}
+
+				&.edgtf-masonry-gallery-item-content-left .edgtf-masonry-gallery-item-title,
+				&.edgtf-masonry-gallery-item-content-left .edgtf-masonry-gallery-item-subtitle {
+				    width: 85%;
+				}
+			}
+
+		}
+	}
+
+		&.edgtf-mg-text-info {
+
+			.edgtf-masonry-gallery-item-inner {
+
+				background: #fff;
+				text-align: left;
+
+				.edgtf-masonry-gallery-item-title {
+					margin-bottom: 15px;
+				}
+
+				.edgtf-masonry-gallery-item-subtitle {
+					color: $first-main-color;
+				}
+
+				.edgtf-masonry-gallery-read-more {
+					color: $first-main-color;
+				}
+
+			}
+
+		}
+
+		&.edgtf-mg-standard {
+
+			.edgtf-masonry-gallery-item-inner {
+
+				opacity: 0;
+				@include edgtfTransition(opacity .25s cubic-bezier(0.45, 0.05, 0.55, 0.95), background-color .25s cubic-bezier(0.45, 0.05, 0.55, 0.95));
+				.edgtf-masonry-gallery-item-subtitle {
+					color: #fff;
+				}
+				.edgtf-masonry-gallery-item-title {
+					color: #fff;
+				}
+
+				.edgtf-masonry-gallery-read-more {
+					color: #fff;
+				}
+
+			}
+
+			&.edgtf-mg-standard-hover-text:hover {
+				.edgtf-masonry-gallery-item-inner {
+					opacity: 1;
+					background-color: rgba(48,39,28,0.3);
+				}
+			}
+
+		}
+
+		.edgtf-mg-item-link {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+	}
+
+}
+
+
+
+/* ==========================================================================
+   Masonry Gallery - end
+   ========================================================================== */

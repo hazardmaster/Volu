@@ -1,0 +1,43 @@
+.edgtf-header-standard {
+
+    .edgtf-menu-area {
+        background-color: #fff;
+		box-sizing: border-box;
+
+        .edgtf-vertical-align-containers {
+
+
+            .edgtf-position-right-inner{
+                height: 100%;
+
+				.widget_text {
+					display: inline-block;
+					vertical-align: middle;
+				}
+            }
+        }
+    }
+	.edgtf-search-opener{
+		font-size:16px;
+	}
+
+	.edgtf-search-opener,
+	.edgtf-fullscreen-menu-opener{
+		position:relative;
+		padding-right:3px;
+		padding-left: 11px;
+		display:inline-block;
+		vertical-align: middle;
+		height: 29px;
+		color: $default-heading-color;
+
+		&:hover {
+			color: $first-main-color;
+		}
+	}
+
+	.edgtf-side-menu-button-opener{
+		margin-left: 13px;
+	}
+}
+

@@ -1,0 +1,180 @@
+/* #Blog Single - start
+========================================================================== */
+
+.edgtf-blog-holder {
+    &.edgtf-blog-single {
+        article {
+
+            margin-bottom: 48px;
+
+            .edgtf-single-tags-holder {
+                margin: 20px 0;
+
+                .edgtf-single-tags-title {
+                    display: inline-block;
+                    margin-right: 5px;
+                }
+                .edgtf-tags {
+                    display: inline-block;
+
+                    a {
+                        margin: 0 5px;
+                    }
+                }
+            }
+
+            .edgtf-single-links-pages {
+                margin-top: 65px;
+
+                .edgtf-single-links-pages-inner {
+                    > a,
+                    > span {
+                        display: inline-block;
+                        height: 30px;
+                        width: 30px;
+                        line-height: 30px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            &.format-link,
+            &.format-quote {
+
+                .edgtf-post-text {
+                    background-color: $default-elements-background-color;
+                    margin-bottom: 30px;
+                    padding: 68px 43px;
+                }
+
+                .edgtf-post-info {
+                    margin-bottom: 29px;
+                }
+
+                .edgtf-post-content .edgtf-post-text .edgtf-post-mark.edgtf-link-mark {
+                    font-size: 130px;
+                }
+
+                .edgtf-post-content .edgtf-post-info-bottom {
+                    padding: 7px 0 12px;
+                }
+            }
+
+            &.format-link .edgtf-post-text {
+                padding: 70px 43px 55px;
+
+                .edgtf-post-mark.edgtf-quote-mark {
+                    font-size: 300px;
+                    right: -40px;
+                    top: -55px;
+                }
+            }
+
+            &.format-quote .edgtf-post-text {
+                padding: 70px 43px 55px;
+
+                .edgtf-post-mark.edgtf-quote-mark {
+                    font-size: 185px;
+                    right: 23px;
+                    top: 11px;
+                }
+            }
+
+        }
+
+        .edgtf-author-description {
+            width: 100%;
+            display: inline-block;
+            vertical-align: middle;
+            padding-bottom: 48px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #f4f4f4;
+
+            .edgtf-author-description-inner {
+                display: table;
+            }
+
+            .edgtf-author-name {
+                margin-bottom: 15px;
+            }
+
+            .edgtf-author-description-image {
+                display: table-cell;
+                width: 175px;
+                border-radius: 100%;
+                overflow: hidden;
+
+                img {
+                    vertical-align: middle;
+                }
+            }
+
+            .edgtf-author-description-text-holder {
+                display: table-cell;
+                position: relative;
+                vertical-align: middle;
+                padding-left: 30px;
+            }
+            .edgtf-author-text {
+                padding-top: 6px;
+                p:last-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+.edgtf-blog-single-navigation {
+                position: relative;
+
+                .edgtf-blog-single-navigation-inner {
+                    display: inline-block;
+                    width: 100%;
+                    vertical-align: middle;
+                }
+
+                .edgtf-blog-single-prev,
+                .edgtf-blog-single-next {
+                    display: inline-block;
+                    font-size: 20px;
+
+                    a {
+                        color: $first-main-color;
+
+                        &:hover {
+                            color: $second-main-color;
+                        }
+                    }
+                }
+
+                .edgtf-blog-single-prev {
+                    float: left;
+                }
+
+                .edgtf-blog-single-next {
+                    float: right;
+                }
+            }
+
+/* #Blog Single - end
+========================================================================== */
+
+/* Blog single sidebar - start
+========================================================================== */
+
+.single-post {
+    .edgtf-sidebar {
+        padding-left: 45px;
+    }
+
+    .edgtf-has-sidebar-left {
+        .edgtf-sidebar {
+            padding-left: 0;
+            padding-right: 45px;
+        }
+    }
+}
+
+/* Blog single sidebar - end
+========================================================================== */

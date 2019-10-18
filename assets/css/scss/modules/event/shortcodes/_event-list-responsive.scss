@@ -1,0 +1,72 @@
+.edgtf-event-list-holder.edgtf-event-list-calendar{
+	@for $i from 2 through 5 {
+		&.edgtf-event-list-col-#{$i} {
+			.edgtf-el-item{
+				@include laptop-mid-landscape{
+					.edgtf-el-item-day{
+						display: inline-block;
+					}
+
+					.edgtf-el-item-my{
+						display: inline-block;
+						margin-left: 10px;
+					}
+
+					.edgtf-el-item-location-title-holder .edgtf-el-item-location{
+						vertical-align: middle;
+						line-height: 15px;
+					}
+				}
+
+				@include ipad-landscape{
+					width: 50%;
+				}
+
+				@include phone-portrait{
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.edgtf-event-list-holder.edgtf-event-list-full-width{
+	.edgtf-el-item{
+		@include phone-portrait{
+			.edgtf-btn{
+				margin-top: 18px;
+			}
+		}
+	}
+}
+
+
+.edgtf-event-list-holder.edgtf-event-list-standard{
+	&.edgtf-event-list-col-3 .edgtf-el-item,
+	&.edgtf-event-list-col-4 .edgtf-el-item,
+	&.edgtf-event-list-col-5 .edgtf-el-item {
+
+		@include ipad-landscape {
+			width: 49%;
+			margin: 0 2% 2% 0!important;
+
+			&:nth-child(2) {
+				margin-right: 0!important;
+			}
+		}
+
+		@include ipad-portrait{
+			width: 100%;
+			margin: 0!important;
+			margin-bottom: 50px!important;
+		}
+	}
+
+	&.edgtf-event-list-col-2 .edgtf-el-item{
+
+		@include ipad-portrait{
+			width: 100%;
+			margin: 0 0 50px !important;
+		}
+	}
+}

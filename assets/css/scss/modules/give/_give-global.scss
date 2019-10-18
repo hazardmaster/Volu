@@ -1,0 +1,51 @@
+.edgtf-give-progress{
+
+	&.give-goal-progress{
+		margin-bottom: 0;
+	}
+
+	.edgtf-progress-bar{
+		margin-bottom: 12px;
+	}
+
+	.edgtf-give-progress-btm{
+		display: table;
+		width: 100%;
+	}
+
+	.edgtf-give-progress-raised,
+	.edgtf-give-progress-goal{
+		.edgtf-give-progress-title{
+			display: inline-block;
+			vertical-align: middle;
+			color: $default-text-color;
+		}
+
+		.edgtf-give-progress-amount{
+			color: #000;
+			font-weight: 700;
+			font-family: $default-heading-font;
+		}
+	}
+
+	.edgtf-give-progress-raised{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: left;
+	}
+
+	.edgtf-give-progress-goal{
+		display: table-cell;
+		vertical-align: middle;
+		text-align: right;
+	}
+}
+
+.give_error.give_warning,
+.give_success.give_warning{
+	border-color: $first-main-color;
+
+	&:before{
+		background-color: $first-main-color;
+	}
+}
