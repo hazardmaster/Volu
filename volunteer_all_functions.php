@@ -83,14 +83,34 @@ if($user_login_credentials -> status_binary != 'active'){
                     }
                     
                 }else{
-                    echo"password do not match";
+                    echo"<div id='display_error' style='background-color:lightblue'><h3 style='text-align:center'>password do not match</h3></div>";
+                    echo"<script>
+                    
+                    $(document).ready(function(){
+                        $('#display_error').fadeOut(2000);
+                    });
+                    
+                    </script>";
+
+
                 }
 
             
 
 
             }else{
-                echo"Empty field";
+    
+                echo"<div id='display_error' style='background-color:lightblue'><h3 style='text-align:center'>There are empty fields</h3></div>";
+                echo"<script>
+                
+                $(document).ready(function(){
+                    $('#display_error').fadeOut(2000);
+                });
+                
+                </script>";
+
+    
+    
             }
             
 
