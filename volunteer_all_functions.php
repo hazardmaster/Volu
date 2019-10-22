@@ -5,24 +5,34 @@ class data{
 //Volunteer Login
     function Volunteer_login($email_login,$password_login){
  if(!empty($email_login)&&!empty($password_login)){
-     echo "true";
-     exit;
+    
  global $wpdb;
  $user_login_credentials = $wpdb -> get_row("SELECT * FROM wp_user_details WHERE email ='{$email_login}' AND pass ='{$password_login}' ");
  
 
 if($user_login_credentials -> status_binary != 'active'){
-    echo"Activate Your account";
+    echo"<div id='display_error' style='background-color:lightblue'><h3 style='text-align:center'>Check your email to activate</h3></div>";
+
 }else{
 
-    $_SESSION['email'] =$user_login_credentials->ID;
+    $_SESSION['id'] =$user_login_credentials->ID;
+
+
+//we will use to redirect
 
     echo"Welcome {$user_login_credentials->username}";
 }
 
  }else{
-     echo"There are empty field(s)";
- }
+    echo"<div id='display_error' style='background-color:lightblue'><h3 style='text-align:center'>There Is an Error with your Registration</h3></div>";
+                        echo"<script>
+                        
+                        $(document).ready(function(){
+                            $('#display_error').fadeOut(2000);
+                        });
+                        
+                        </script>";
+                         }
 
     }
 
@@ -31,10 +41,8 @@ if($user_login_credentials -> status_binary != 'active'){
 
             global $wpdb;
 
-
+//random code to activate
          $code = rand(0,1000000000);
-
-
 
             if(!empty($volunteer_email)&&!empty($volunteer_username)&&!empty($volunteer_phone_number)&&!empty($volunteer_linkedln_url)&&!empty($volunteer_gender)&&!empty($volunteer_focus_group)&&!empty($volunteer_passion)&&!empty($volunteer_location)&&!empty($volunteer_password)&&!empty($volunteer_confirm_password)){
 
@@ -79,11 +87,11 @@ if($user_login_credentials -> status_binary != 'active'){
                         $headers = array('Content-Type: text/html; charset=UTF-8');
                  
                         wp_mail($email,$subject,$body,$headers); 
-                       echo "registration done";
+                       //echo "registration done";
                     }
                     
                 }else{
-                    echo"<div id='display_error' style='background-color:lightblue'><h3 style='text-align:center'>password do not match</h3></div>";
+                    echo"<div id='display_error' style='background-color:lightblue'><h3 style='text-align:center'> password do not match </h3></div>";
                     echo"<script>
                     
                     $(document).ready(function(){
@@ -100,7 +108,7 @@ if($user_login_credentials -> status_binary != 'active'){
 
             }else{
     
-                echo"<div id='display_error' style='background-color:lightblue'><h3 style='text-align:center'>There are empty fields</h3></div>";
+                echo"<div id='display_error' style='background-color:lightblue'><h3 style='text-align:center'>There are empty field(s)</h3></div>";
                 echo"<script>
                 
                 $(document).ready(function(){
