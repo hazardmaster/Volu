@@ -1,0 +1,32 @@
+.application-house {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.error_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.succes_box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    flex-wrap:nowrap;
+}
+#ret_btn{
+    width:100%;
+    height:20px;
+    background-color:white;
+    border:1px solid white;
+    color:blue; 
+}
+.signin{
+     display: flex;
+    justify-content: center;
+}
+#username_from_app,#password_from_app{
+    width:100%;
+}

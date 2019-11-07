@@ -1,31 +1,16 @@
 <?php
 session_start();
 ob_start();
+
+
   /**
-   * Template Name: Volunteer Client Account
+   * Template Name: Client Account
    *
    * @package flatsome
    */
   get_header();
-  require "php/volunteer_all_functions.php";
-$data = new data();
+
   session_start();
-  if(isset($_GET['id']) && isset($_GET['user'])){
-     $data -> Volunteer_verification($_GET['id'],$_GET['user']);
-     client_profile();
-    }
-  if (isset($_GET["action"])) {
-    $action = $_GET["action"];
-    if ($action = "logout") {
-      session_destroy();
-    }
-  }
-
-  if (isset($_SESSION["id"])) {
-    client_profile();
-  }
-
-$data = new data();
 
   //User registration manenos
   if (isset($_POST["client_registration_form"])) {
@@ -58,27 +43,88 @@ $data = new data();
         echo "Passwords don't match";
         exit;
       }
-
-
-      $data-> Volunteer_signUp($firstName, $surname, $phone, $email, $password_1,$linkedInURL,$gender,$nationality,$focus_group_db,$passionate_causes_db,$partner_location_db);
-
+      Volunteer_signUp($firstName, $surname, $phone, $email, $password_1,$linkedInURL,$gender,$nationality,$focus_group_db,$passionate_causes_db,$partner_location_db);
   }
 
+  function Volunteer_signUp($firstName, $surname, $phone, $email, $password_1,$linkedInURL,$gender,$nationality,$focus_group_db,$passionate_causes_db,$partner_location_db){
+
+    //hash password
+     $hashed_password = password_hash($password_1, PASSWORD_DEFAULT);
+     $userName = $firstName. " ".$surname;
+       global $wpdb;
+         $result = $wpdb->insert(
+                'wp_user_details',
+                array(
+                        'userName'=>$userName,
+                        'password'=>$hashed_password,
+                        'email'=>$email,
+                        'gender'=>$gender,
+                        'phone'=>$phone,
+                        'nationality'=>$nationality,
+                        'linkedInURL'=>$linkedInURL,
+                        'focusGroups'=>$focus_group_db,
+                        'passionate_causes'=>$passionate_causes_db,
+                        'partner_locations'=>$partner_location_db
+                      )
+         );
+         if (!$result) {
+             wp_die('Database Insertion failed');
+         }
+         echo "Registration for ". $userName . " was successful";
+  }
 
   //User Login part
   if (isset($_POST["login_user"])) {
       $email_login = $_POST["login_email"];
       $password_login = $_POST["login_password"];
 
-  $data-> Volunteer_login($email_login, $password_login);
+      Volunteer_login($email_login, $password_login);
 
   }
   //Volunteer Login
+    function Volunteer_login($email_login,$password_login){
 
+       if(!empty($email_login) || !empty($password_login)){
+
+         global $wpdb;
+
+         echo $email_login;
+         $user_login_credentials = $wpdb -> get_row("SELECT * FROM wp_user_details WHERE email ='$email_login' ");
+
+         $db_pass = $user_login_credentials->password;
+
+          if (!$user_login_credentials) {
+             echo "User not found";
+             exit;
+           }
+
+           if (!password_verify($password_login, $db_pass)) {
+             echo "passwords dont match";
+             exit;
+           }
+
+
+        if($user_login_credentials -> status_binary != 'active'){
+            echo"Activate Your account";
+            exit;
+
+        }else{
+
+            $_SESSION['ID'] =$user_login_credentials->ID;
+            client_profile();
+
+        }
+       }else{
+
+           echo"There are empty field(s)";
+
+       }
+
+    }
 
   function client_profile(){
 
-    $currentID = $_SESSION['id'];
+    echo $currentID = $_SESSION['ID'];
 
     global $wpdb;
 
@@ -115,11 +161,6 @@ $data = new data();
                 </p>
                 <p>
                   Phone: 0'. $results->phone.'
-                  <br><br>
-                </p>
-
-                <p>
-                  <a href="?action=logout" class="logout" >Logout</a>
                   <br><br>
                 </p>
 
@@ -213,83 +254,6 @@ $data = new data();
     ';
     exit;
   }
-  function logout(){
-    session_destroy();
-  }
-
-// if (isset($_POST["update_profile"])) {
-
-//     $rawEmail =  $_POST['update_email'];
-//     $rawFirstName = $_POST['update_firstName'];
-//     $rawLastName = $_POST['update_lastName'];
-//     $phone = $_POST['update_phone'];
-//     $updatePass_1 = $_POST['password_update_1'];
-//     $updatePass_2 = $_POST['password_update_2'];
-//     $user_id = $_POST['user_id'];
-
-//     if (!empty($updatePass_1) && !empty($updatePass_2)) {
-
-//        if($updatePass_1 !== $updatePass_2){
-//           echo "Passwords don't match";
-//           exit();
-//         }
-//       // $password_update = password_hash($updatePass_1, PASSWORD_DEFAULT);
-//       $password_update = $updatePass_1;
-//      }
-
-//     //Sanitize Data
-//     $email = sanitize_email($rawEmail);
-//     $firstName = sanitize_user($rawFirstName);
-//     $lastName = sanitize_user($rawLastName);
-
-
-//     //Hash password
-
-
-//       $data = update($firstName,$lastName,$password_update,$email,$phone,$user_id);
-
-
-// }
-
-//  function update($first_name,$last_name,$updated_password,$mail,$phone,$user_id){
-
-//          require("config/pdoConnect.php");
-
-//          if (!$conn) {
-//            echo "Connection not possible. Try again later.";
-//            exit;
-//          }
-
-//          if (!empty($first_name)) {
-
-//              $stmt = $conn->prepare(" UPDATE client_member_details SET firstName= '$first_name' WHERE ID='$user_id' " );
-//              $result = $stmt->execute();
-//          }
-//          if (!empty($last_name)) {
-//              $stmt = $conn->prepare(" UPDATE client_member_details SET lastName='$last_name' WHERE ID='$user_id' " );
-//              $result = $stmt->execute();
-//          }
-//          if (!empty($mail)) {
-//              $stmt = $conn->prepare(" UPDATE client_member_details SET email='$mail' WHERE ID='$user_id' " );
-//              $result = $stmt->execute();
-//          }
-//          if (!empty($phone)) {
-//              $stmt = $conn->prepare(" UPDATE client_member_details SET phone='$phone' WHERE ID='$user_id' " );
-//              $result = $stmt->execute();
-//          }
-//          if (!empty($updated_password)) {
-//              $stmt = $conn->prepare(" UPDATE client_member_details SET password='$updated_password' WHERE ID='$user_id' " );
-//              $result = $stmt->execute();
-//          }
-
-
-//          if (!$result) {
-//              wp_die('Database update failed');
-//          }elseif ($result) {
-//           echo "<p style='color:green'>Update successful.</p>" ;
-//          }
-
-//     }
 
   function show_reg_log_form(){
     echo '
@@ -329,15 +293,12 @@ $data = new data();
 
             </div>
 
-            <div class="form-row">
+            <div class="form-group" ng-show="edit">
 
-              <div class="col">
-
-                  <input type="submit" class="form-control form-control-lg w3-btn w3-block w3-large w3-text-white"  name="login_user" value="Login" style="background-color: #800000">
-
-              </div>
+              <input type="submit" class="form-control form-control-lg w3-btn w3-block w3-large w3-text-white"  name="login_user" value="Login" style="background-color: #800000">
 
             </div>
+
             <p>
             <br>
               <a class="create_account" >Don\'t have an account? <span style="color:red">Create Account</span></a>
@@ -854,18 +815,14 @@ $data = new data();
 
             </div>
 
-<br>
-            <div class="form-row">
 
-              <div class="col">
+            <div class="form-group">
 
                 <input type="submit" name="client_registration_form" value="Sign Up" class="form-control form-control-lg w3-btn w3-block w3-large w3-text-white" style="background-color: #800000" >
 
-              </div>
-
-            </div><br>
+            </div>
             <p>
-            <a class="login_account">Already have an account? <span style="color: red">Click to Log in</span></a>
+              <a class="login_account">Already have an account? <span style="color: red">Click to Log in</span></a>
             </p>
             <br><br><br><br>
 

@@ -1,0 +1,177 @@
+.big-div {
+    background-color: lightgrey;
+    display: flex;
+    width: 100%;
+    height: 700px;
+    justify-content: center;
+}
+
+.LogIn_box,
+.Reset_password_box {
+    border-radius: 2px;
+    background-color: #ffffff;
+    /*padding: 20px;*/
+    width: 30%;
+    height: 300px;
+    margin-top: 10%;
+}
+
+.ned {
+    margin-bottom: 10px;
+}
+
+#Login_email,
+#Login_password,
+#reset_password_email {
+    width: 100%;
+    height: 30px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid #FFA627;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.signUp_box {
+    border-radius: 5px;
+    background-color: #ffffff;
+    /*padding: 20px;*/
+    width: 60%;
+    height: 650px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #cca300;
+}
+
+.btn_holder {
+    display: flex;
+    flex-direction: row;
+}
+
+.forgot_password {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#fog_pass {
+    font-style: bold;
+    font-size: 16px;
+}
+
+#signUp,
+#signIn,
+#signIn_res {
+    width: 50%;
+    background-color: #FFA627;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 4px 4px 4px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+#signUp_reg,
+#signIn_reg,
+#reset_btn {
+    width: 50%;
+    background-color: #FFA627;
+    color: white;
+    padding: 14px 20px;
+    margin: 20px 4px 4px 4px;
+    border: none;
+    border-radius: 1px;
+    cursor: pointer;
+}
+
+input:focus-visible,
+.gender:focus-visible,
+.nationality:focus-visible {
+    outline: none;
+    background-color: white;
+}
+
+.gender,
+.nationality {
+    width: 50%;
+    height: 30px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid #FFA627;
+    text-decoration: none;
+    margin-top: 10px;
+    -webkit-appearance: none;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.focus_group_volunteer,
+.passion_volunteer {
+    width: 50%;
+    height: 80px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid #FFA627;
+    -webkit-appearance: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+textarea {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #FFA627;
+    border-radius: 1px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.holder1 {
+    display: flex;
+    flex-direction: row;
+}
+
+#username_volunteer,
+#email_volunteer,
+#phone_number_volunteer,
+#linkedln_url_volunteer,
+#password_1,
+#password_2 {
+    width: 50%;
+    height: 30px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid #FFA627;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#dob_volunteer {
+    width: 100%;
+    height: 30px;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid #FFA627;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+label {
+    display: none;
+}
+
+#res_button {
+    background-color: #ffffff;
+    border: 1px solid white;
+}

@@ -1,0 +1,60 @@
+ /* input[type=text],.gender,.nationality,#dob,input[type=tel],#email_reg,input[type=password]{
+  width: 100%;
+  margin-top:20px;
+  margin-bottom:20px;
+  display: inline-block;
+
+} */
+a{
+  text-align: center;
+  font-size: 15px;
+  margin: 20px auto;
+}
+.upper, .lower{
+  background-color: #ffffff;
+  width: 33%;
+  float: right;
+  margin: 80px 150px 50px 5px;
+  /* margin: 50px 100px  50px 0; */
+  border-radius: 30px;
+}
+.lower{
+width: 33%;
+margin: 100px 150px 50px 5px;
+}
+
+
+/* body{
+background-color: #f7f7f5;
+} */
+
+.upper_most{
+margin: 20px 20px 20px 100px;
+font-size: 0;
+width: 10%;
+float: left;
+}
+.upper_text{
+  padding-bottom: 0;
+  width:500px
+}
+.upper_most h1{
+font-size: 60px;
+text-align: center;
+}
+
+.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+  }
+  #Div2{
+    display: none;
+  }
+  button{
+    width: 40%;
+    height: 50px;
+    background-color: #ffa726;
+    border-radius: 20px;
+  }

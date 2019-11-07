@@ -205,7 +205,7 @@ if(!function_exists('goodwish_edge_is_ajax_enabled')) {
     function goodwish_edge_is_ajax_enabled() {
 
         return false;
-                
+
     }
 }
 
@@ -219,7 +219,7 @@ if(!function_exists('goodwish_edge_ajax_meta')) {
     function goodwish_edge_ajax_meta() {
 
         $id = goodwish_edge_get_page_id();
-        
+
         $page_transition = get_post_meta($id, "edgtf_page_transition_type", true);
         ?>
 
@@ -314,7 +314,7 @@ if(!function_exists('goodwish_edge_get_objects_without_ajax')) {
 
         wp_reset_postdata();
 
-        return $posts_without_ajax;        
+        return $posts_without_ajax;
     }
 }
 
@@ -646,7 +646,7 @@ if( !function_exists('goodwish_edge_page_custom_style') ) {
     }
 
     add_action('wp_enqueue_scripts', 'goodwish_edge_page_custom_style');
-    
+
 }
 
 if( !function_exists('goodwish_edge_container_style') ) {
@@ -1034,17 +1034,40 @@ if ( ! function_exists( 'goodwish_edge_enqueue_editor_customizer_styles' ) ) {
 
 
 function registration(){
-    if(is_page(array('1233', '1238', '536'))){
+    if(is_page(array('1233', '1238', '536', '1265','1272','1277','1282','1286','1284'))){
     wp_enqueue_style('reg', get_stylesheet_uri().'/styles.css');
-    wp_enqueue_script('mat_script', get_template_directory_uri().'/materialize.min.js', array(), '1.0');
-    wp_enqueue_script('jquery_script', get_template_directory_uri().'/jquery.js', array(), '1.0');
     wp_enqueue_script('custom_script', get_template_directory_uri().'/custom2.js', array(), '1.0');
-    wp_enqueue_style('mat', get_template_directory_uri().'/materialize.min.css');    
-    }
-    
+    // wp_enqueue_style('display', get_template_directory_uri().'/display.css');
+
+      }
+
 }
 
 add_action('wp_enqueue_scripts', 'registration');
+
+function ngo(){
+   if(is_page(array('1296','1293','1300','1290','1239','1302','1316'))){
+     //wp_enqueue_style('fontFace2', EDGE_ASSETS_ROOT.'/css/font-face1.css');
+     wp_enqueue_style('custom', EDGE_ASSETS_ROOT.'/css/form.css');
+     // wp_enqueue_style('custom1', EDGE_ASSETS_ROOT.'/css/custom1.css');
+     // wp_enqueue_style('custom2', EDGE_ASSETS_ROOT.'/css/custom2.css');
+     // wp_enqueue_style('font-face', EDGE_ASSETS_ROOT.'/css/font-face1.css');
+     // wp_enqueue_style('font-face1', EDGE_ASSETS_ROOT.'/css/font-face-2.css');
+     //wp_enqueue_style('styles', EDGE_ASSETS_ROOT.'/css/ngostyles.css');
+      wp_enqueue_style('theme', EDGE_ASSETS_ROOT.'/css/theme.css');
+     //wp_enqueue_style('theme1', EDGE_ASSETS_ROOT.'/css/theme1.css');
+      //wp_enqueue_style('yearpicker', EDGE_ASSETS_ROOT.'/css/yearpicker.css');
+    wp_enqueue_script('custom_script1', EDGE_ASSETS_ROOT.'/customjs', array(), '1.0');
+    wp_enqueue_script('custom_script2', EDGE_ASSETS_ROOT.'/moment.js', array(), '1.0');
+    wp_enqueue_script('custom_script3', EDGE_ASSETS_ROOT.'/yearpicker.js', array(), '1.0');
+    wp_enqueue_script('custom_script4', EDGE_ASSETS_ROOT.'/main.js', array(), '1.0');
+
+      }
+
+
+}
+
+add_action('wp_enqueue_scripts', 'ngo');
 
 function volunteer_user_profile(){
     if(is_page('1241')){
@@ -1054,7 +1077,72 @@ function volunteer_user_profile(){
     wp_enqueue_style('volunteer_user_style', EDGE_ASSETS_ROOT.'/css/volunteer_user_profile.css');
 
     }
-    
+
 }
 
 add_action('wp_enqueue_scripts', 'volunteer_user_profile');
+
+function display1(){
+if(is_page('1272')){
+  wp_enqueue_style('volunteer_user_style', EDGE_ASSETS_ROOT.'/css/opportunities-display.css');
+
+
+  }
+}
+add_action('wp_enqueue_scripts', 'display1');
+
+
+function app_page(){
+    if(is_page('1305')){
+      wp_enqueue_style('volunteer_user_style', EDGE_ASSETS_ROOT.'/css/Application-confirmation.css');
+      
+      }
+    }
+    add_action('wp_enqueue_scripts', 'app_page');
+    
+    
+//Working on File upload here
+
+
+
+
+//enqueue scripts here
+
+function aw_scripts() {
+    // Register the script
+    wp_register_script( 'aw-custom', EDGE_ASSETS_ROOT . "/js/volunteer_user_profile.js", array('jquery'), '1.1', true );
+
+    // Localize the script with new data
+    $script_data_array = array(
+        'ajaxurl' => admin_url( 'oscar-ajax.php' ),
+    );
+    wp_localize_script( 'aw-custom', 'aw', $script_data_array );
+
+    // Enqueued script with localized data.
+    wp_enqueue_script( 'aw-custom' );
+}
+
+add_action( 'wp_enqueue_scripts', 'aw_scripts' );
+
+
+//Processs the uploads here
+add_action( 'wp_ajax_file_upload', 'file_upload_callback' );
+add_action( 'wp_ajax_nopriv_file_upload', 'file_upload_callback' );
+
+function file_upload_callback() {
+    $arr_img_ext = array('image/png', 'image/jpeg', 'image/jpg', 'image/gif');
+    if (in_array($_FILES['file']['type'], $arr_img_ext)) {
+        wp_upload_bits($_FILES["file"]["name"], null, file_get_contents($_FILES["file"]["tmp_name"]));
+    }
+    wp_die();
+}
+
+
+
+
+
+function applicationconfirmation(){
+wp_enqueue_style('app',EDGE_ASSETS_ROOT.'/css/applicationconfirmation.css');
+
+}
+add_action('wp_enqueue_scripts', 'applicationconfirmation');
